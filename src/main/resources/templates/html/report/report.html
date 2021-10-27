@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>Report</title>
+
+    <!-- CSS -->
+    <link th:href="@{/libs/bootstrap-3.4.1-dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/report_common.css}" rel="stylesheet">
+    <link th:href="@{/css/report_print.css}" rel="stylesheet">
+    <link th:href="@{/css/report_trend.css}" rel="stylesheet">
+    <link th:href="@{/css/report_common_island.css}" rel="stylesheet">
+    
+    <script th:src="@{/libs/jquery-3.5.1.min.js}"></script>
+    <script th:src="@{/libs/bootstrap-3.4.1-dist/js/bootstrap.min.js}"></script>
+
+    
+    <!-- d3 관련 -->
+    <script th:src="@{/libs/d3/d3.js}"></script>
+    <script th:src="@{/libs/d3/d3.legend.js}"></script>
+    <script th:src="@{/libs/d3/d3plus.js}"></script>
+
+
+    <!-- amchart 차트 관련 -->
+    <script th:src="@{/libs/amcharts/amcharts.js}"></script>
+    <script th:src="@{/libs/amcharts/serial.js}"></script>
+    <script th:src="@{/libs/amcharts/pie.js}"></script>
+    <script th:src="@{/libs/amcharts/xy.js}"></script>
+    <script th:src="@{/libs/amcharts/radar.js}"></script>
+    <script th:src="@{/libs/amcharts/themes/light.js}"></script>
+    <script th:src="@{/libs/amcharts/amstock.js}"></script>
+
+    
+    <!-- amchart4 -->
+    <script th:src="@{/libs/amcharts4/core.js}"></script>
+    <script th:src="@{/libs/amcharts4/charts.js}"></script>
+    <script th:src="@{/libs/amcharts4/maps.js}"></script>
+    <script th:src="@{/libs/amcharts4/plugins/wordCloud.js}"></script>
+    <script th:src="@{/libs/amcharts4/plugins/forceDirected.js}"></script>
+    <script th:src="@{/libs/amcharts4/themes/animated.js}"></script>
+    <script th:src="@{/libs/amcharts/themes/light.js}"></script>
+    <script th:src="@{/libs/amcharts/plugins/export/export.js}"></script>
+    <script th:src="@{/libs/amcharts/plugins/export/libs/jszip/jszip.js}"></script>
+    <script th:src="@{/libs/amcharts/plugins/export/libs/xlsx/xlsx.js}"></script>
+    <script th:src="@{/libs/amcharts/plugins/export/libs/FileSaver.js/FileSaver.js}"></script>
+    <link th:href="@{/libs/amcharts/plugins/export/export.css}" rel="stylesheet">
+
+    <!-- report_renderer 관련 -->
+    <script th:src="@{/js/report_renderer/report_renderer.js}"></script>
+
+    <!-- render util -->
+    <script th:src="@{/js/report_renderer/render_util.js}"></script>
+
+    <!-- treeMap chart -->
+    <script th:src="@{/js/report_renderer/render_unit/report_render_ipa_treeMap.js}"></script>
+    <!-- common chart -->
+    <script th:src="@{/js/report_renderer/render_unit/common_type.js}"></script>
+    <!-- 워드클라우드 -->
+    <script th:src="@{/js/report_renderer/render_unit/report_render_wordcloud.js}"></script>
+    <!-- 이슈 및 원문 -->
+    <script th:src="@{/js/report_renderer/render_unit/report_render_table_type.js}"></script>
+    <!-- 멀티차트(감성분포 및 감성분포 추이) -->
+    <script th:src="@{/js/report_renderer/render_unit/report_render_multi_div_type1.js}"></script>
+    <!-- piechart(감성분포 및 감성분포 추이) -->
+    <script th:src="@{/js/report_renderer/render_unit/report_render_pie_type1.js}"></script>
+
+    <!-- component_setting_renderer 관련 -->
+    <script th:src="@{/js/report_renderer/component_setting_renderer.js}"></script>
+    
+	<style type="text/css">
+		@media print {
+			.reportDiv {position:relative;top:210px;left:100px;}
+			h3.reportH3 {font-size:35px;color:#fff !important;font-weight:bold;}
+			h3.reportH3 span{color:#fff !important;}
+			span.reportSpan {margin:5px 0 20px 0;display:block;color:#fff94c !important;font-size:20px;}
+			span.reportSpan span {color:#fff94c !important;}
+		}
+		
+		.reportDiv {position:relative;top:210px;left:100px;}
+		.reportH3 {font-size:35px;color:#ffffff;font-weight:bold;}
+		.reportSpan {margin:5px 0 20px 0;display:block;color:#fff94c;font-size:20px;}
+	</style>
+</head>
+  
+<body>
+	<!-- container -->
+	<div class="container">
+		<input type="hidden" id="userId" th:value="${reportParams.userId}">
+		<input type="hidden" id="userNm" th:value="${reportParams.userNm}">
+		<input type="hidden" id="gtrYmd" th:value="${reportParams.gtrYmd}">
+        <input type="hidden" id="issKwd" th:value="${reportParams.issKwd}">
+		<input type="hidden" id="issKwdDisp" th:value="${reportParams.issKwdDisp}">
+		<input type="hidden" id="subKwd" th:value="${reportParams.subKwd}">
+		<input type="hidden" id="incKwd" th:value="${reportParams.incKwd}">
+
+		<div class="reportDiv">
+			<h3 class="reportH3"><span th:text="${reportParams.userNm}"></span> AI 보고서</h3>
+			<span class="reportSpan" id="subTitle"></span>
+		</div>
+		<img src='/images/default_cover_img2.png' style="width:100%;height:60%"></img>
+
+<!--	<div style="position:relative;top:210px;left:100px;">
+			<h3 style="font-size:55px;color:#ffffff;font-weight:bold;"><span th:text="${reportParams.userNm}"></span> AI 보고서</h3>
+			<span style="margin:5px 0 20px 0;display:block;color:#fff94c;font-size:30px;"><span th:text="${reportParams.issKwdDisp}"></span> - <span th:text="${reportParams.gtrYmd}"></span></span>
+		</div>
+		<img src='/images/default_cover_img2.png' style="width:100%;height:60%"></img>
+-->
+
+		<!-- <div id="top10" style="padding-top:100px; page-break-before:always"></div> --><!-- Top10 뉴스 -->
+		<div id="tsb1" style="padding-top:100px; page-break-before:always"></div><!-- 언급량 추이 -->
+		<div id="asb1" style="padding-top:100px; page-break-before:always"></div><!-- 연관어 클라우드 -->
+		<div id="stb3" style="padding-top:10px; page-break-before:always"></div><!-- 감성분포 및 감성분포 추이 -->
+		<div id="tsl1" style="padding-top:100px; page-break-before:always"></div><!-- 장기 트렌드 분석 -->
+		<div id="tsl2" style="padding-top:100px; page-break-before:always"></div><!-- 변곡점 분석 -->
+        <div id="dob1" style="padding-top:100px; page-break-before:always"></div><!-- 주제어 원문 -->
+		
+		<!-- 법률안 처리현황 -->
+		<div th:if="${reportParams.userId} != '9700341'" id="processingStatus" class="section" style="padding-top:100px; page-break-before:always">
+			<h3>법률안 처리현황(심사중 대표발의 법률안)</h3>
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>구분</th>
+							<th>제안일자</th>
+							<th>상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${processingStatusList.size} == 0">
+							<td colspan="4">데이터가 없습니다.</td>
+						</tr>
+                        <tr th:each="list, index : ${processingStatusList}">
+							<td th:text="${index.count}"></td>
+							<td th:text="${list.billPrntName}"></td>
+							<td th:text="${list.proposeDt}"></td>
+							<td th:text="${list.inscStLctnNm}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>			
+		</div>
+
+
+        <!-- 오늘의 국회일정 -->
+		<div th:if="${reportParams.userId} != '9700341'" id="agenda" class="section" style="padding-top:100px; page-break-before:always">
+			<h3>오늘의 국회일정</h3>
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>구분</th>
+							<th>회의명</th>
+							<th>회의일시</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${agendaList.size} == 0"><td colspan="4">데이터가 없습니다.</td></tr>
+						<tr th:each="list, index : ${agendaList}">
+							<td th:text="${index.count}"></td>
+							<td th:text="${list.gubunNm}"></td>
+							<td th:text="${list.title}"></td>
+							<td th:text="${list.meettingDate}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		
+		<!-- 소관기관 보도자료 -->
+		<div th:if="${reportParams.userId} != '9700341'" id="pressRelease" class="section" style="padding-top:100px; page-break-before:always">
+			<h3>소관기관 보도자료</h3>
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>구분</th>
+							<th>자료명</th>
+							<th>게시일자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${pressReleaseList.size} == 0">
+							<td colspan="4">데이터가 없습니다.</td>
+						</tr>
+						<tr th:each="list, index : ${pressReleaseList}">
+							<td th:text="${index.count}"></td>
+							<td th:text="${list.govNm}"></td>
+							<td th:text="${list.mtrSj}"></td>
+							<td th:text="${list.mtrDt}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>			
+		</div>
+		
+		
+		<!-- content -->
+		<div class="content menu_content"></div>
+		<!-- //content -->
+
+	</div>
+	<!-- //container -->
+
+</body>
+    <!-- report -->
+    <script>
+        $(function() {
+            $("#title").text("AI Report "+$("#gtrYmd").val());
+//            componentAssemblyTop10($("#userId").val(), $("#gtrYmd").val()); 	// Top10 뉴스
+            componentDiyTsb1(false);			// 언급량 추이
+            componentDiyAsb1(false);			// 연관어 클라우드
+            componentAssemblyStb3(false);		// 감성 분포 및 대표 감성 표현
+            componentDiyTsl1(false);			// 장기 트렌드 분석
+            componentDiyTsl2(false);			// 변곡점 분석		
+            componentDiyDob1(true);				// 주제어 원문
+			
+			// 서브타이틀 넣기
+			$("#subTitle").text($("#issKwdDisp").val() + " - " + fnComnGetFormatDate(new Date(), "."));
+
+        });
+    </script>
+</html>

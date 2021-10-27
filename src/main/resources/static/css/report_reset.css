@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/*@font-face {
+font-family: 'NanumBarunGothic';
+src: local('Nanum Barun Gothic Regular'), local('Nanum Barun Gothic-Regular'), local'NanumBarunGothic Regular');
+src: url('../fonts/NanumBarunGothic.eot');
+src: url('../fonts/NanumBarunGothic.eot?#iefix') format('embedded-opentype'),url('../fonts/NanumBarunGothic.woff') format('woff'),url('../fonts/NanumBarunGothic.ttf') format('truetype');
+}*/
+
+/* 로딩바 */
+.loadingBox{background: rgba(255, 255, 255, 0.75); width: 100%; height: 100%; position: absolute; z-index: 9999;}
+    /**===== bars3 =====*/
+.loading {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin: -25px 0 0 -25px;
+  z-index: 9999;
+}
+/* 로딩바 */
+
+@font-face{
+font-family: "Century Gothic";
+    src: url('../fonts/gothic.eot');
+    src: local('gothic'), url('../fonts/gothic.woff') format('woff'), url('../fonts/gothic.ttf') format('truetype'), url('../fonts/gothic.eot?#iefix') format('embedded-opentype');
+}
+
+
+/*==================================================================
+// web-font
+//=================================================================*/
+/* 웹폰트 설정 */
+@font-face {
+    font-family: 'NotoSansKR-Light';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Light-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Light-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Light-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Light-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NotoSansKR-Thin';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Thin-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Thin-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Thin-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Thin-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NotoSansKR-DemiLight';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-DemiLight-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-DemiLight-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-DemiLight-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-DemiLight-Hestia.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR-Regular';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Regular-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Regular-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Regular-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Regular-Hestia.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR-Medium';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Medium-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Medium-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Medium-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Medium-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NotoSansKR-Bold';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Bold-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Bold-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Bold-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Bold-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family: 'NotoSansKR-Black';
+    font-style: normal;
+    font-weight: 100;
+    src: 
+    url('../fonts/eot/NotoSansKR-Black-Hestia.eot'),
+    url('../fonts/eot/NotoSansKR-Black-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff/NotoSansKR-Black-Hestia.woff') format('woff'),
+    url('../fonts/otf/NotoSansKR-Black-Hestia.otf') format('opentype');
+}
+
+
+
+
+/* [reset css] */
+* { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
+html,body {margin:0;padding:0;width:100%;height:100%;font-family:"NotoSansKR-Regular", 노토산스,"Malgun Gothic", 맑은 고딕,Apple Gothic, Dotum,tahoma,sans-serif !important;font-size:12px;color: #222;-webkit-font-smoothing: antialiased;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,legend {margin:0; padding:0; font-family: "NotoSansKR-Regular","Malgun Gothic", 맑은 고딕,Apple Gothic, Dotum,tahoma,sans-serif !important; } 
+table {border-spacing:0; border-collapse:collapse;}
+th, td {word-break:break-all;}
+form,fieldset {display:block;}
+form,fieldset,img {border:none;} 
+address,caption,cite,code,dfn,em,th,var {font-style:normal; font-weight:normal;} 
+ol,ul,li {list-style:none;} 
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+abbr,acronym {border:none;} 
+hr {display:none;}
+a {text-decoration:none; color:#666;}
+a:link,a:visited {text-decoration:none; outline:none;}
+a:hover,a:active,a:focus {text-decoration:none;}
+textarea {overflow:auto;} 
+/*html:first-child select {padding-right:6px; height:20px;} *//* opera 9 & below fix */ 
+option {padding-right:6px;} /* firefox fix */
+legend {position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;} /* for screen reader */ 
+caption {display:none;}
+select, input{ border-color: #dcdcdc !important;box-shadow: none !important; }
+/*
+clear:both; display, position(top,left), float, overflow
+(min-width, width), (min-height, height) (margin,padding)
+font(text-indent, text-align, font-weight, font-size, line-height, font-family, color)
+border, background
+cursor, z-index, zoom
+*/

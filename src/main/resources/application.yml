@@ -1,0 +1,58 @@
+server:
+  port: 2020
+
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:log4jdbc:mariadb://10.1.42.7/keyword?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      username: keyword
+      password: keyword@2021
+      connection-test-query: SELECT 1 
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  thymeleaf:
+    prefix: classpath:templates/html/
+    check-template-location: true
+    suffix: .html
+    mode: HTML5
+    cache: false
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+pdf:
+  make-pdf-script: ${user.dir}/pdf/create_pdf.sh
+  pdf-dir: ${user.dir}/pdf
+
+keywordApi:
+  url: http://10.1.42.6:2020/assembly
+
+isScheduling:
+  issKwd: false
+  reportData: true
+  reportData_top_n: 2
+
+aireport:
+  url: http://10.1.42.6:8720/
+  secondUrl: http://10.1.42.6:8720/
+  methond: render_component.json
+  params:
+    filterExc: "#@VK#S1#'TV연예',#@VK#S1#'스포츠',가요대전,금토드라마,수목드라마,신년사,안보인단,연기대상,예능,월화드라마,주말드라마"
+    sourceList: blog,community,news,twitter
+    period: week
+    perSource: Y
+    categorySet: SM
+    groups: '{"name": "인물", "codes": ["1/1/0"]}-{"name": "조직", "codes": ["2/1/0","2/2/0"]}-{"name": "지역/장소", "codes": ["3/1/0", "3/2/0", "3/3/0", "3/15/0", "3/17/0"]}-{"name": "라이프", "codes": ["6/0/0"]}-{"name": "문화/예술/연예", "codes": ["7/2/0","7/4/0","7/5/0"]}-{"name": "학문/분야", "codes": ["8/0/0"]}'
+
+
+legisReport: 
+  url: http://localhost
+  method: /portal/search/search/getLegisReport.do
+  isUsed: false

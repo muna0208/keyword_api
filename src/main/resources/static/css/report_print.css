@@ -1,0 +1,1889 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("report_reset.css"); /* HTML 초기화 */
+@page {size: A4 portrait; margin: 0mm 17mm 0mm 17mm; }
+
+body {-webkit-print-color-adjust: exact;
+-moz-print-color-adjust: exact;
+-o-print-color-adjust: exact;
+-ms-print-color-adjust: exact;
+print-color-adjust: exact;}
+
+html { }
+/* header */
+
+#wrap {width: 847px;margin: 0 auto;/* padding: 40px 40px 40px 40px; *//* -webkit-box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41); */-moz-box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41);/* box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41); *//* border-radius: 4px; *//* background-color: #fff; */}
+/* .container {width: 847px;margin: 30px auto; -webkit-box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41);-moz-box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41);box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41);background-color: #fff; position: relative;} */
+.container {/*width: 847px;*/margin: 30px auto; -moz-box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.41); background-color: #fff; position: relative;}
+.cover {background-color: #336699 !important;background-size: cover !important;background-position: 0 0 !important;background-repeat: no-repeat !important;position:relative;margin-bottom:100px}
+.cover h1 {padding: 90px 0 0 60px;color: #000;/* opacity: 0.8; */}
+.cover .description {margin: 20px 0 0 60px;}
+.cover p.date {color: #fff;font-size: 18px;padding: 20px 0 0 65px;}
+.cover .mark {position: absolute;right: 70px;bottom: 40px;}
+.cover .mark  img{   }
+
+/*html {background:url(../images/background.png) center center repeat !important;background-attachment:fixed; }*/
+.cover {height: 800px; background: linear-gradient( -45deg,  rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) ), url(/images/default_cover_img.png);}
+.cover h1 .keyword {font-size:55px;font-weight:bold;background-color: rgba(255,255,255,0.7);text-shadow: 1px 1px #ffffff;}
+.cover h1 .title {font-size:40px;background-color: rgba(255,255,255,0.7);text-shadow: 1px 1px #ffffff;}
+.cover h1 .issue  {font-size: 40px;font-weight:bold; margin-left:400px; /* background-color: rgba(255,255,255,0.7); *//* text-shadow: 1px 1px #ffffff; */color: #fff;letter-spacing: -1px;border-bottom: 2px solid #fff;/* padding: 0 0 9px 0; */overflow: hidden;}
+
+.cover .description {font-size: 14px;line-height: 28px;}
+.cover .description li {/* list-style:inside; */color: #000;opacity: 0.8;}
+.cover .description li span {background-color: rgba(255,255,255,0.7);text-shadow: 1px 1px #ffffff;}
+.cover .description li span:before {content:'●';font-size:3px;margin:0 7px 0 5px;vertical-align: bottom;}
+
+
+.cover h1 {   }
+.cover .contentsList {padding: 45px 0 0 70px;color: #fff;}
+.cover .contentsList li {font-size: 20px;line-height: 40px;margin: 18px 0 0 0;font-weight: bold;}
+.cover .contentsList .subList  {padding: 0 0 0 30px;}
+.cover .contentsList .subList  li {font-size: 14px;line-height: 29px;margin: 0;list-style: disc;}
+
+
+
+/* .section  {padding: 25px 40px;clear: both;} */
+.section  {clear: both;padding: 25px 0px;padding-bottom: 100px;}
+.section h1 {font-size: 40px;font-weight:bold;padding: 40px 0 10px 0;}
+.section h2 {font-size: 30px;font-weight:bold;border-bottom:2px solid #000;padding:10px 0;margin: 10px 0;clear: both;}
+.section .description {font-size: 12px;margin: 0 0 15px 0;}
+.section .summary {margin: 0 0 80px 0;}
+.section hr { display:block; border:0px; height:3px; background-color:#000;}
+.section p {font-size:14px;line-height:24px;padding: 10px 0 12px 0;text-align: justify;}
+/* 주의: 아래의 .container .chartArea가 사용됨(by leeho) */		
+.section .chartArea {height: 370px;/* border:1px solid #aaa; */margin: 10px 0 10px 0;padding: 10px 10px;}
+.section .picArea {border:1px solid #aaa;margin: 10px 0 10px 0;padding: 10px 10px;}
+/* 주의: 아래의 .container .chart가 사용됨(by leeho) */
+.section .chart{width: 100%; height: 100%; }
+.section .chart2{width: 70%; height: 100%; float:left; }
+
+.section .tagcloud {width:30%;height: 100%;float:left;padding: 10px;overflow: hidden;border-left: 1px dotted #ccc;}
+/* moved by leeho */
+/*.section .chartArea h3 {font-size: 16px;border: 0;text-align: center;padding: 10px 0 0 0;margin: 0 0 5px 0;display: block;}*/
+
+.section .tagcloud ul {border: 0;margin: 0;text-align: center;width: 100%;}
+.section .tagcloud ul li {border: 0;padding: 7px 10px;line-height: 100%;display: inline-block;}
+.sizeLV1 {font-size: 11px !important;}
+.sizeLV2 {font-size: 14px !important;}
+.sizeLV3 {font-size: 18px !important;}
+.sizeLV4 {font-size: 22px !important;}
+.sizeLV5 {font-size: 30px !important;}
+.sizeLV6 {font-size: 38px !important;}
+
+.colorLV1 {color: #e02e1b !important;}
+.colorLV2 {color: #d57e17 !important;}
+.colorLV3 {color: #84a01f !important;}
+.colorLV4 {color: #6da278 !important;}
+.colorLV5 {color: #7d98ad;}
+.colorLV6 {color: #9d9d9d !important;}
+
+.container .chartArea {height: auto;min-height: 370px; /* border:1px solid #aaa;*/ margin-top:20px; margin-bottom:20px; margin-right:auto; margin-left:auto;padding: 10px 10px;width: 100%;overflow: hidden;position: relative;}
+.container .chart{width: 100%;height: 100%;min-height: 500px;}
+
+/* min-height를 없애고 사용자가 최상위에 .customChartArea에 크기를 지정하도록 함 */
+/* .container .customChartArea {border:1px solid #aaa;margin: 10px 0 10px 0;padding: 10px 10px;width: 766px;overflow: hidden;position: relative; display: table;} */
+.container .customChartArea {/*border:1px solid #aaa;*/ margin-top:20px; margin-bottom:20px; margin-right:auto; margin-left:auto;padding: 10px 10px;width: 100%;overflow: hidden;position: relative; display: table;}
+.container .multiChartArea {margin-bottom:20px; margin-right:auto; margin-left:auto;padding: 10px 10px;width: 100%;overflow: hidden;position: relative; display: table;}
+.container .customChart h1,h2,h3,h4{display: table-row;}
+.container .customChart{width: 100%;height: 100%; display: table-row;}
+
+.section ul li {font-size:15px;line-height:24px;border-top:1px dashed #000;padding: 7px;}
+.section ul {border-bottom:1px dashed #000;margin: 5px 0 0 0;}
+.section h3 {font-size: 20px;font-weight:bold;border-bottom:1px solid #000;margin: 0px 0 10px 0;padding: 10px 0;display: block;line-height: inherit;}
+.section h3.subTitle {font-size: 24px;font-weight:bold;border-bottom: 0;margin: 0;padding: 10px 0 0 0;display: block;line-height: inherit;}
+
+.container .wordCloudArea {height: auto;min-height: 330px;border:1px solid #aaa;margin: 10px 0 10px 0;padding: 10px 10px;width: 766px;overflow: hidden;position: relative;}
+.container .wordCloud{width: 100%;height: 100%;min-height: 300px;}
+
+.section h4 {font-size: 16px;font-weight:bold;margin: 10px 0 10px 0;padding: 15px 0 0 0;display: block;line-height: inherit;}
+/* modified by leeho */
+/*.section .table h4 {font-size: 16px;font-weight:bold;margin: 10px 0 10px 0;padding: 15px 0 0 0;display: block;line-height: inherit;text-align: center;}*/
+.section .table h3 {font-size: 16px;border: 0;text-align: center;padding: 10px 0 0 0;margin: 0 0 5px 0;display: block;}
+.section .table h4 {font-size: 14px;font-weight:bold;margin: 15px 0 0 0;padding: 0;display: block;line-height: inherit;text-align: center;}
+
+/* modified by leeho */
+.section .chartArea h3,
+.section .customChartArea h3 
+{font-size: 16px;border: 0;text-align: center;padding: 10px 0 0 0;margin: 0 0 5px 0;display: block;}
+/*.section .chartArea h4 {font-size: 18px;font-weight:bold;margin: 15px 0 0 0;padding: 0;display: block;line-height: inherit;text-align: center;}*/
+.section .chartArea h4, 
+.section .customChartArea h4 
+{font-size: 14px;font-weight:bold;margin: 15px 0 0 0;padding: 0;display: block;line-height: inherit;text-align: center;}
+
+.section .chartArea .tagcloud h4,
+.section .customChartArea .tagcloud h4 
+{font-size: 18px;font-weight:bold;margin: 5px 0 21px 0;padding: 0;display: block;line-height: inherit;text-align: center;}
+
+.section > em {font-size: 22px;padding: 5px 0 10px 0;display: block;}
+.section .url {text-align:right;font-size:12px;font-style: italic;margin: 0 0 0 20px;}
+.section .colGroup { clear:both;}
+.section .tableCol1  {float:left;width: 33%;padding: 0 10px; }
+.section .tableCol2  {float:left;width: 33%;padding: 0 10px; }
+.section .tableCol3  {float:left;width: 33%;padding: 0 10px; }
+.section .table { margin:10px 0; position: relative;}
+.section .table table{ width:100%;}
+.section .table ul li {font-size:11px;line-height:24px;border-top:0px;padding: 0px;list-style: initial;}
+.section .table ul {border-bottom:0px ; margin: 0; }
+.section .table th {text-align: center; background-color:#eeeeee;padding:7px 12px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;}
+/*.section .table td {background-color:#ffffff;padding:7px 12px;border-bottom:1px solid #aaa;font-size: 12px;line;line-height: 17px;text-align: center;border-right: 1px solid #fff;}*/
+.section .table td {padding:7px 12px;border-bottom:1px solid #aaa;font-size: 12px;line-height: 17px;text-align: center;border-right: 1px solid #fff;}
+
+/* td의 좌우 padding이 0*/
+.section .nopad th {padding-left:0px !important; padding-right:0px !important;}
+.section .nopad td {padding-left:0px !important; padding-right:0px !important;}
+
+.section .table2 { margin:10px 0;}
+.section .table2 ul li {font-size:11px;line-height:24px;border-top:0px;padding: 0px;list-style: initial;}
+.section .table2 ul {border-bottom:0px ; margin: 0; }
+.section .table2 th {background-color:#eeeeee;padding:7px 12px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;white-space: nowrap;}
+.section .table2 td {background-color:#ffffff;padding: 12px 12px;border-bottom:1px solid #aaa;font-size: 12px;line-height: 19px;text-align: left;border-right: 1px solid #fff;}
+.section .table2 td.keyword {white-space: nowrap;text-align: center;font-weight: bold;padding: 5px 30px;}
+
+
+.section .table3 { margin:10px 0;}
+.section .table3 ul li {font-size:11px;line-height:22px;border-top:0px;padding: 0px;list-style: initial;}
+.section .table3 ul {border-bottom:0px ; margin: 0; }
+.section .table3 th {background-color:#eeeeee;padding:7px 12px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;white-space: nowrap;}
+.section .table3 td {background-color:#ffffff;padding: 10px 12px;border-bottom:1px solid #aaa;font-size: 12px;line-height: 19px;text-align: left;border-right: 1px solid #fff;}
+.section .table3 td.keyword {white-space: nowrap;text-align: center;font-weight: bold;padding: 5px 30px;}
+
+
+.section .table4 { margin:10px 0;}
+.section .table4 table{ width:100%;}
+.section .table4 ul li {font-size:11px;line-height:22px;border-top:0px;padding: 0px;list-style: initial;}
+.section .table4 ul {border-bottom:0px ; margin: 0; }
+.section .table4 th {text-align: center; background-color:#eeeeee;padding:5px 12px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;}
+.section .table4 td {background-color:#ffffff;padding: 4px 12px;border-bottom:1px solid #aaa;font-size: 12px;line-height: 17px;text-align: center;border-right: 1px solid #fff;}
+
+
+
+/* 스파이더 차트 css */
+.item3 .spiderChart {background: url(../images/guideLine3.png) 125px 11px no-repeat;padding: 0 0 3px 0px;}
+.item4 .spiderChart {background: url(../images/guideLine4.png) 98px 11px no-repeat;padding: 0 0 3px 0px;}
+.item5 .spiderChart {background: url(../images/guideLine5.png) 109px 11px no-repeat;padding: 0 0 3px 0px;}
+.item6 .spiderChart {background: url(../images/guideLine6.png) 125px 11px no-repeat;padding: 0 0 3px 0px;}
+.section .tableSpiderArea1 {display:table;width: 100%;}
+.section .tableSpiderArea2 {display:table;width: 100%;}
+.item3 .tableSpiderArea1 .tableSpider {display: inline-block;width: 100%;}
+.item3 .tableSpiderArea2 .tableSpider {display: inline-table;width: 50%;}
+.item4 .tableSpiderArea1 .tableSpider {display: inline-block;width: 50%;}
+.item4 .tableSpiderArea2 .tableSpider {display: inline-table;width: 50%;}
+.item5 .tableSpiderArea1 .tableSpider {display: inline-block;width: 33.3%;}
+.item5 .tableSpiderArea2 .tableSpider {display: inline-table;width: 50%;}
+.item6 .tableSpiderArea1 .tableSpider {display: inline-block;width: 33.3%;}
+.item6 .tableSpiderArea2 .tableSpider {display: inline-table;width: 33.3%;}
+.section .tableSpider table { display:table; margin:0 auto;}
+.section .tableSpider ul li {font-size:11px;line-height:24px;border-top:0px;padding: 0px;list-style: initial;}
+.section .tableSpider ul {border-bottom:0px ; margin: 0; }
+.section .tableSpider th {background-color:#eeeeee;padding: 6px 6px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;font-size: 10px;}
+.section .tableSpider th.categoryName {background-color:#ffffff;padding: 9px 6px;font-weight:bold;color:#333333;font-size: 12px;border: 0;}
+.section .tableSpider td {background-color:#ffffff;padding: 3px 6px;border-bottom:1px solid #aaa;font-size: 10px;line-height: 17px;text-align: center;border-right: 1px solid #fff;}
+.legend1 {color:#FF6600;margin: 0 5px 0 0;font-size: 4px;}
+.legend2 {color:#FCD202;margin: 0 5px 0 0;font-size: 4px;}
+.legend3 {color:#B0DE09;margin: 0 5px 0 0;font-size: 4px;}
+.legend4 {color:#0D8ECF;margin: 0 5px 0 0;font-size: 4px;}
+.legend5 {color:#2A0CD0;margin: 0 5px 0 0;font-size: 4px;}
+.legend6 {color:#CD0D74;margin: 0 5px 0 0;font-size: 4px;}
+.legend7 {color:#CC0000;margin: 0 5px 0 0;font-size: 4px;}
+.legend8 {color:#00CC00;margin: 0 5px 0 0;font-size: 4px;}
+.legend9 {color:#0000CC;margin: 0 5px 0 0;font-size: 4px;}
+.legend10 {color:#DDDDDD;margin: 0 5px 0 0;font-size: 4px;}
+/* */
+
+
+.quotation {padding: 20px 30px;border: 1px solid #aaa;background-color: #f9f8ed;margin: 0 0 10px 0;}
+.quotation em {padding: 5px 0 0 0;font-size: 18px;font-weight: bold;line-height: 12px;}
+.section .quotation ul  { margin: 0; border: 1px solid #ddd; background-color: #fff; border-radius: 8px;}
+.section .quotation ul li { border: 0px; padding: 15px 20px;}
+.section .quotation .url { padding: 5px 7px 0 0;}
+
+.pointColor1 { color:#f30;}
+table .pointColor1 { color:#f30 !important; border-bottom:2px solid #f30 !important;}
+
+.pointColor2 { color:#06f;}
+table .pointColor2 { color:#06f !important; border-bottom:2px solid #f30 !important;}
+
+.pointColor3 { color:#060;}
+table .pointColor3 { color:#060 !important; border-bottom:2px solid #f30 !important;}
+
+
+.pointColorNEG { color:#cc4748; font-weight:bold;}
+.pointColorPOS { color:#67b7dc; font-weight:bold;}
+.pointColorNEU { color:#222; font-weight:bold;}
+
+.section .table th.pointColorNEG { background-color:#e3a1a2; font-weight:bold;}
+.section .table th.pointColorPOS { background-color:#a0cfe5; font-weight:bold;}
+.section .table th.pointColorNEU { background-color:#d8d8d8; font-weight:bold;}
+
+.section .table2 th.pointColorNEG { background-color:#e3a1a2; font-weight:bold;}
+.section .table2 th.pointColorPOS { background-color:#a0cfe5; font-weight:bold;}
+.section .table2 th.pointColorNEU { background-color:#d8d8d8; font-weight:bold;}
+
+.section .table3 th.pointColorNEG { background-color:#e3a1a2; font-weight:bold;}
+.section .table3 th.pointColorPOS { background-color:#a0cfe5; font-weight:bold;}
+.section .table3 th.pointColorNEU { background-color:#d8d8d8; font-weight:bold;}
+
+.section p.originTitle {font-size: 12px; font-weight: bold; padding: 0;}
+.section p.originContent { font-size: 12px; line-height: 19px; padding: 0; }
+.section p.originUrl {font-size: 11px;text-align: left;padding: 0;line-height: 16px;padding: 7px 0 0 0;}
+.iconBlog {padding: 7px 0 0 28px !important;background: url(../images/icon_blog.png) 0 6px no-repeat;}
+.iconTwit {padding: 7px 0 0 28px !important;background: url(../images/icon_twit.png) 0 6px no-repeat;}
+.iconNews{padding: 7px 0 0 28px !important;background: url(../images/icon_news.png) 0 6px no-repeat;}
+.iconComm {padding: 7px 0 0 28px !important;background: url(../images/icon_comm.png) 0 6px no-repeat;}
+
+.highlight { background-color:#FFFF99 !important; border-right:1px solid #fff;}
+.comment {font-size: 12px !important;text-align:right !important;font-style: italic;padding: 0 0 5px 0 !important;}
+.comment:before { content:'* '; color:#C00;}
+.emphasis { font-size:16px; font-weight:bold;}
+.emphasis2 { font-size:14px; font-weight:bold;}
+.number {font-size: 12px;font-weight:bold;background-color: #333;border-radius: 100px;padding: 6px 18px 4px 10px;display: -webkit-inline-box;color: #fff;width: 24px;text-align: center;margin: 5px 0;}
+
+
+.summaryTable { width: 100%; }
+.summaryTable th { font-size: 14px; font-weight: bold; border-bottom: 1px solid #aaa; padding: 10px 30px; }
+.summaryTable tr {}
+.summaryTable td { border-bottom: 1px solid #aaa; }
+.summaryTable ul { border: 0; margin: 0; }
+.summaryTable ul li {border: 0;font-size: 14px;padding: 6px 0;list-style: outside;}
+.summaryTable ul.subList { padding: 0 0 0 31px; }
+.summaryTable ul.subList li {font-size: 12px;border-top: 1px solid #aaa;list-style: inside;}
+
+.summaryText {border: 15px solid #ccc;padding: 25px 40px;margin: 0 0 35px 0;}
+.summaryText h3 {font-size: 36px;text-align: center;border: 0;margin: 0;}
+.summaryText p {font-size: 18px;line-height: 33px;}
+.summaryText .url {text-align:right;font-size:12px;font-style: italic;padding: 0 0 0 0;line-height: 18px;/* white-space: nowrap; *//* overflow: hidden; *//* text-overflow: ellipsis; */}
+
+
+.citation {border: 10px solid #ccc;padding: 20px 30px;margin: 0 0 35px 0;}
+.citation h3 {font-size: 36px;text-align: center;border: 0;margin: 0;}
+.citation p {font-size: 14px;line-height: 28px;}
+.citation .url {text-align:right;font-size: 11px;font-style: italic;padding: 0 0 0 0;line-height: 18px;/* white-space: nowrap; *//* overflow: hidden; *//* text-overflow: ellipsis; */}
+
+
+.bigTitle {border-bottom: 10px solid #aaa;padding: 7px 40px 7px 40px;margin: 0 0 35px 0;/* border-top: 15px solid #ccc; */}
+.bigTitle h3 {font-size: 38px;text-align: center;border: 0;margin: 0;}
+
+
+.section .sectionSummary { border: 0;}
+.section .sectionSummary ul {}
+.section .sectionSummary li {font-size: 14px;line-height: 24px;border: 0;list-style: outside;padding: 0 0 0 0px;margin;margin: 12px 0 12px 20px;}
+
+.section .sectionSummary2 { border: 0;}
+.section .sectionSummary2 ul {}
+.section .sectionSummary2 li {font-size: 14px;line-height: 24px;border: 0;list-style: outside;padding: 0 0 0 0px;margin: 0 0 6px 20px;}
+
+
+em.style2 {font-style: italic;}
+em.style3 {font-size: 18px;line-height: 27px;padding: 20px 30px;background-color: #fffef5;border: 1px solid #d2c4af;border-radius: 10px;text-align: center;}
+
+
+.section .originContentWrap {border: 2px solid #aaa;padding: 10px;border-bottom: 0;}
+.section .originContentWrap:last-child {border-bottom: 2px solid #aaa;}
+.originContentWrap +  .originContentWrap {border-top: 1px dotted #aaa;}
+.section .originContentWrap .originTitle {font-size: 14px;margin: 0 0 0 5px;}
+.section .originContentWrap .originContent {border: 0;margin: 3px 0 0 0;}
+.section .originContentWrap .originContent  li {border: 0;font-size: 12px;padding: 0 0 0 10px;line-height: 19px;/* list-style-type: disc; *//* list-style-position: inside; */}
+.section .originContentWrap .originContent  li:before {content:'┗';font-weight: bold;padding: 0 10px 0 0;vertical-align: sub;color: #c1a717;}
+.section .originContentWrap p.originContent {border: 0;margin: 0 5px 0 5px;font-size: 14px;line-height: 24px;}
+.section .originContentWrap .originDescription {font-size: 11px;padding: 3px 0 0 0;text-align: right;line-height: 14px;}
+.section .originContentWrap .originDescription .mediaName {   }
+.section .originContentWrap .originDescription .replyCount {   }
+.section .originContentWrap .originDescription .date {   }
+.section .originContentWrap .originDescription span {border-left: 1px solid #ccc;padding: 0 10px 0 0;font-style: italic;padding-left: 10px !important;padding-bottom: 4px !important;}
+.section .originContentWrap .originDescription span:last-child {border-right: 0;margin: 0;}
+.section .originContentWrap .originDescription span:first-child {border-left: 0;margin: 0;padding-right: 10px !important;padding-left: 29px !important;}
+
+
+.section .originContentWrap .originContent span.originDescription {font-size: 11px;padding: 3px 0 0 0;text-align: right;line-height: 14px;}
+.section .originContentWrap .originContent span.originDescription .mediaName {   }
+.section .originContentWrap .originContent span.originDescription .replyCount {   }
+.section .originContentWrap .originContent span.originDescription .date {   }
+.section .originContentWrap .originContent span.originDescription span {border-left: 1px solid #ccc;padding: 0 10px 0 0;font-style: italic;padding-left: 10px !important;padding-bottom: 4px !important;}
+.section .originContentWrap .originContent span.originDescription span:last-child {border-right: 0;margin: 0;}
+.section .originContentWrap .originContent span.originDescription span:first-child {border-left: 0;margin: 0;padding-right: 10px !important;padding-left: 29px !important;}
+
+
+
+.table .emphasis {font-size: 14px;font-weight: bold;}
+.table .increase {   }
+.table .decrease {   }
+.table .increase:before {content:'▲';padding: 0 10px 0 0;color: #db1a08;}
+.table .decrease:before {content:'▼';padding: 0 10px 0 0;color: #217c2a;}
+
+
+
+.tableChart {overflow: hidden;}
+.tableChart h4 {font-size: 18px;font-weight:bold;margin: 25px 0 0 0;padding: 0;display: block;line-height: inherit;text-align: center;}
+.tableChart .tableChartLegend {border: 1px solid #aaa;overflow: hidden;padding: 10px 0;margin: 10px 0 20px 0;}
+.tableChartLegend {   }
+.section .tableChartLegend ul {border: 0;margin: 0;}
+.section .tableChartLegend li {font-size: 12px;padding: 0 0 0 20px;float: left;border: 0;width: 13%;margin: 0 0 0 26px;}
+.tableChartLegend .tableChartLegend_01 { background: url(../images/bg_le01.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_02 { background: url(../images/bg_le02.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_03 { background: url(../images/bg_le03.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_04 { background: url(../images/bg_le04.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_05 { background: url(../images/bg_le05.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_06 { background: url(../images/bg_le06.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_07 { background: url(../images/bg_le07.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_08 { background: url(../images/bg_le08.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_09 { background: url(../images/bg_le09.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_10 { background: url(../images/bg_le10.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_11 { background: url(../images/bg_le11.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_12 { background: url(../images/bg_le12.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_13 { background: url(../images/bg_le13.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_14 { background: url(../images/bg_le14.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_15 { background: url(../images/bg_le15.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_16 { background: url(../images/bg_le16.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_17 { background: url(../images/bg_le17.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_18 { background: url(../images/bg_le18.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_19 { background: url(../images/bg_le19.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_20 { background: url(../images/bg_le20.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_21 { background: url(../images/bg_le21.png) no-repeat 0 5px; }
+.tableChartLegend .tableChartLegend_22 { background: url(../images/bg_le22.png) no-repeat 0 5px; }
+
+.tableChart .layoutTable1 {width: 100%;margin: 0 0 15px 0;overflow: hidden;position: relative;}
+.tableChart .layoutTable2 {width: 100%;margin: 0 0 15px 0;overflow: hidden;position: relative;}
+.tableChart .layoutTable3 {width: 100%;margin: 0 0 15px 0;overflow: hidden;position: relative;}
+
+.tableChart .layoutTable1 table {width: 100%;}
+
+.tableChart .layoutTable2 table {width: 373px;float: left;}
+.tableChart .layoutTable2 table:nth-child(1) { margin: 0 20px 0 0;}
+.tableChart .layoutTable2 table:nth-child(2) { margin: 0 0 0 0;}
+
+.tableChart .layoutTable3 table {width: 242px;float: left;}
+.tableChart .layoutTable3 table:nth-child(1) { margin: 0 20px 0 0;}
+.tableChart .layoutTable3 table:nth-child(2) { margin: 0 20px 0 0;}
+.tableChart .layoutTable3 table:nth-child(3) { margin: 0 0 0 0;}
+
+.tableChart table {   }
+.tableChart tr {   }
+
+
+.tableChart th {text-align: center;background-color:#eeeeee;padding:7px 12px;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-weight:bold;color:#333333;border-right: 1px solid #fff;}
+.tableChart td {background-color:#ffffff;padding:7px 12px;border-bottom:1px solid #aaa;font-size: 12px;line;line-height: 17px;text-align: center;border-right: 1px solid #fff;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+.tableChart td.tableChartLegend_01 { background: url(../images/bg_le01.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_02 { background: url(../images/bg_le02.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_03 { background: url(../images/bg_le03.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_04 { background: url(../images/bg_le04.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_05 { background: url(../images/bg_le05.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_06 { background: url(../images/bg_le06.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_07 { background: url(../images/bg_le07.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_08 { background: url(../images/bg_le08.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_09 { background: url(../images/bg_le09.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_10 { background: url(../images/bg_le10.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_11 { background: url(../images/bg_le11.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_12 { background: url(../images/bg_le12.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_13 { background: url(../images/bg_le13.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_14 { background: url(../images/bg_le14.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_15 { background: url(../images/bg_le15.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_16 { background: url(../images/bg_le16.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_17 { background: url(../images/bg_le17.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_18 { background: url(../images/bg_le18.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_19 { background: url(../images/bg_le19.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_20 { background: url(../images/bg_le20.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_21 { background: url(../images/bg_le21.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+.tableChart td.tableChartLegend_22 { background: url(../images/bg_le22.png) no-repeat 0 8px;text-align: left;padding: 7px 0 7px 20px; }
+
+
+/* modified by leeho 310 -> 370 */
+.chartArea .networkGraph {width: 75%;float: left;min-height: 370px;display: block;/* background-color: skyblue; */}
+
+.ng_legend { border-bottom:none !important;}
+.ng_legend {position:absolute; margin-left:10px !important;}
+.ng_legend li {font-size:12px !important; border-top:none !important; padding:0px !important; line-height: 22px !important;}
+.ng_legend li span{display:inline-block; width:10px; height:10px; border-radius:10px; margin-right:6px; vertical-align: middle;}
+
+/* default, assoc_color_table_simple */
+.ng_legend .g1{background:#c85556;}
+.ng_legend .g2{background:#d3892e;}
+.ng_legend .g3{background:#e8c81d;}
+.ng_legend .g4{background:#a3a42f;}
+.ng_legend .g5{background:#83a36c;}
+.ng_legend .g6{background:#3c9047;}
+.ng_legend .g7{background:#43baae;}
+.ng_legend .g8{background:#3684a7;}
+.ng_legend .g9{background:#8091c0;}
+.ng_legend .g10{background:#696298;}
+.ng_legend .g11{background:#b175ac;}
+.ng_legend .g12{background:#942727;}
+.ng_legend .g13{background:#965a25;}
+.ng_legend .g14{background:#a78a00;}
+.ng_legend .g15{background:#6b6d1b;}
+.ng_legend .g16{background:#5a714b;}
+.ng_legend .g17{background:#0c6116;}
+.ng_legend .g18{background:#31877e;}
+.ng_legend .g19{background:#1e5e7c;}
+.ng_legend .g20{background:#48577e;}
+.ng_legend .g21{background:#413c63;}
+.ng_legend .g22{background:#743d6d;}
+
+/* assoc_color_table_light */
+.ng_legend.assoc_color_table_light ..g1{background:#67b7dc;}
+.ng_legend.assoc_color_table_light .g2{background:#fdd400;}
+.ng_legend.assoc_color_table_light .g3{background:#84b761;}
+.ng_legend.assoc_color_table_light .g4{background:#cc4748;}
+.ng_legend.assoc_color_table_light .g5{background:#cd82ad;}
+.ng_legend.assoc_color_table_light .g6{background:#2f4074;}
+.ng_legend.assoc_color_table_light .g7{background:#448e4d;}
+.ng_legend.assoc_color_table_light .g8{background:#b7b83f;}
+.ng_legend.assoc_color_table_light .g9{background:#b9783f;}
+.ng_legend.assoc_color_table_light .g10{background:#b93e3d;}
+.ng_legend.assoc_color_table_light .g11{background:#913167;}
+
+/* assoc_color_table_gradient */
+.ng_legend.assoc_color_table_gradient ..g1{background:#df5649;}
+.ng_legend.assoc_color_table_gradient .g2{background:#c4ac3b;}
+.ng_legend.assoc_color_table_gradient .g3{background:#62af82;}
+.ng_legend.assoc_color_table_gradient .g4{background:#5ca3c0;}
+.ng_legend.assoc_color_table_gradient .g5{background:#e08a3e;}
+.ng_legend.assoc_color_table_gradient .g6{background:#808bcf;}
+.ng_legend.assoc_color_table_gradient .g7{background:#ab74d2;}
+.ng_legend.assoc_color_table_gradient .g8{background:#99ac50;}
+.ng_legend.assoc_color_table_gradient .g9{background:#c86688;}
+.ng_legend.assoc_color_table_gradient .g10{background:#a5a5a5;}
+.ng_legend.assoc_color_table_gradient .g11{background:#f55a89;}
+
+.chartArea .keywordArea {float: right;width: 25%;margin: 10px 0 0 0;}
+.chartArea .keywordArea .topKeyword {clear: both;margin: 0 0 17px 0;}
+.chartArea .keywordArea .upKeyword {clear: both;margin: 0 0 17px 0;}
+.chartArea .keywordArea .downKeyword {clear: both;margin: 0 0 0 0;}
+.chartArea .keywordArea h4 {font-size: 14px;font-weight: bold;margin: 0;padding: 0;display: block;}
+.chartArea .keywordArea .keywordBox {border: 1px solid #aaa;overflow: hidden;border-radius: 4px;padding: 10px;margin: 5px 0;}
+.chartArea .keywordArea .keywordBox ul {border: 0;margin: 0;text-align: center;}
+.chartArea .keywordArea .keywordBox ul li {font-size: 12px;line-height: normal;padding: 5px 10px;border: 1px solid #aaa;display: inline-block;border-radius: 100px;margin: 0 2px;}
+
+
+.chartArea .keywordArea .topKeyword h4 {color: #666;}
+.chartArea .keywordArea .topKeyword .keywordBox {border: 1px solid #ccc;}
+.chartArea .keywordArea .topKeyword .keywordBox ul {   }
+.chartArea .keywordArea .topKeyword .keywordBox ul li {background-color: #f2f2f2;border: 1px solid #ccc;color: #333;}
+
+.chartArea .keywordArea .upKeyword h4 {color: #336699;}
+.chartArea .keywordArea .upKeyword .keywordBox {border: 1px solid #8caed0;}
+.chartArea .keywordArea .upKeyword .keywordBox ul {   }
+.chartArea .keywordArea .upKeyword .keywordBox ul li {border: 1px solid #8caed0;background-color: #f8fafd;}
+
+.chartArea .keywordArea .downKeyword h4 {color: #d27d68;}
+.chartArea .keywordArea .downKeyword .keywordBox {border: 1px solid #e68878;}
+.chartArea .keywordArea .downKeyword .keywordBox ul {   }
+.chartArea .keywordArea .downKeyword .keywordBox ul li {border: 1px solid #e68878;background-color: #fffbfb;}
+
+
+.chartArea .keywordGroupWrap {   }
+.chartArea .keywordGroup1 {clear: both;position: absolute;top: 77px;left: 72px;width: 600px;}
+.chartArea .keywordGroup2 {clear: both;position: absolute;top: 200px;left: 511px;width: 224px;}
+.chartArea .keywordGroup3 {clear: both;position: absolute;top: 345px;left: 511px;width: 224px;}
+.chartArea .keywordGroup4 {clear: both;position: absolute;top: 424px;left: 72px;width: 600px;}
+.chartArea .keywordGroup5 {clear: both;position: absolute;top: 345px;left: 27px;width: 224px;}
+.chartArea .keywordGroup6 {clear: both;position: absolute;top: 200px;left: 27px;width: 224px;}
+
+.chartArea .keywordGroupWrap ul {border: 0;margin: 0;}
+.chartArea .keywordGroupWrap .keywordGroup1 ul { text-align:center;   }
+.chartArea .keywordGroupWrap .keywordGroup2 ul {  text-align:left; }
+.chartArea .keywordGroupWrap .keywordGroup3 ul {  text-align:left; }
+.chartArea .keywordGroupWrap .keywordGroup4 ul {  text-align:center;  }
+.chartArea .keywordGroupWrap .keywordGroup5 ul { text-align:right; }
+.chartArea .keywordGroupWrap .keywordGroup6 ul { text-align:right;  }
+.chartArea .keywordGroupWrap li {font-size: 11px;line-height: normal;border: 0;padding: 3px 2px;display: inline-block;color: #666;}
+
+.testColor {width: 100%;/* height: 600px; */overflow: hidden;}
+.testColor ul {border: 0;margin: 0;text-align: center;}
+.testColor ul li {border: 0;color: #fff;font-size: 12px;font-weight: bold;line-height: normal;padding: 5px 10px;display: inline-block;margin: 3px;border-radius: 100px;}
+.testColor .color1 { background-color:#c85556;   }
+.testColor .color2 { background-color:#d3892e;   }
+.testColor .color3 { background-color:#e8c81d;   }
+.testColor .color4 { background-color:#a3a42f;  }
+.testColor .color5 { background-color:#83a36c;   }
+.testColor .color6 { background-color:#3c9047;   }
+.testColor .color7 { background-color:#43baae;   }
+.testColor .color8 { background-color:#3684a7;   }
+.testColor .color9 { background-color:#8091c0;   }
+.testColor .color10 { background-color:#696298;   }
+.testColor .color11 { background-color:#b175ac;   }
+.testColor .color12 { background-color:#942727;   }
+.testColor .color13 { background-color:#965a25;   }
+.testColor .color14 { background-color:#a78a00;   }
+.testColor .color15 { background-color:#6b6d1b;   }
+.testColor .color16 { background-color:#5a714b;   }
+.testColor .color17 { background-color:#0c6116;   }
+.testColor .color18 {background-color: #31877e;}
+.testColor .color19 { background-color:#1e5e7c;  }
+.testColor .color20 { background-color:#48577e;   }
+.testColor .color21 { background-color:#413c63;   }
+.testColor .color22 { background-color:#743d6d;   }
+
+/*.section .table td span {font-size: 12px;margin: 0 5px 0 0;}*/
+.section .table td span {font-size: 12px;}
+.section .table td span.color1 { color:#67b7dc;  }
+.section .table td span.color2 { color:#fdd400;  }
+.section .table td span.color3 { color:#84b761;  }
+.section .table td span.color4 { color:#cc4748;  }
+.section .table td span.color5 { color:#cd82ad;  }
+.section .table td span.color6 { color:#2f4074;  }
+.section .table td span.color7 { color:#448e4d;  }
+.section .table td span.color8 { color:#b7b83f;  }
+.section .table td span.color9 { color:#b9783f;  }
+.section .table td span.color10 { color:#b93e3d;  }
+.section .table td span.color11 { color:#913167;  }
+
+/* added by leeho for korea map */
+.leaflet-control { font-family: "NanumBarunGothic",나눔바른고딕,"Malgun Gothic", 맑은 고딕,Apple Gothic, Dotum,tahoma,sans-serif; }
+.leaflet-control.title { padding: 6px 8px; font-size: 14px; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; }
+.leaflet-control.title h4 { font-size: 16px; font-weight: bold; color: #777; margin: 0px 0px; }
+.leaflet-control.legend { padding: 6px 8px; font-size: 14px; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; text-align: left; line-height: 18px; color: #555; }
+.leaflet-control.legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 1.0; border:1px solid #ccc;}
+
+
+
+.mapArea { position:relative; padding: 15px 10px 0 10px;background: #fafafafa;overflow:hidden;}
+
+
+
+
+.mapArea .region {display: block;width: 200px;margin: 0 0 15px 0;float:left;clear:left;position: relative;padding: 20px 0 0 30px;}
+.mapArea .region:nth-child(2n+2) { float:right; clear:right; }
+.mapArea .region:nth-child(n+6) {float:left;clear:none;margin: 0 0 15px 73px;}
+.mapArea .region:nth-child(3n+8) {float:left;clear:left;margin: 0 0 15px 0;}
+.mapArea .region p {font-size: initial;line-height: initial;padding: 0;text-align: initial;display: block;overflow: hidden;position: absolute;left: 0;top: 0;}
+.mapArea .region p .num {border-radius: 100px;font-weight: bold;background-color: #336699;padding: 5px 0 0 0;color: #fff;font-size: 11px;width: 23px;height: 23px;text-align: center;border: 1px solid #fff;display: block;float: left;}
+.mapArea .region p .location {font-size: 11px;font-weight: bold;float: left;margin: 6px 0 0 6px;}
+
+.mapArea .region .picture {display: block;width: 100%;height: 100px;background-size: cover !important;margin: 0 0 3px 0;}
+.mapArea .region ul {border: 0;margin: 0 0 3px 0;display: block;overflow: hidden;}
+.mapArea .region ul li {border: 0;font-size: 11px;line-height: 18px;padding: 0 10px 0 0;float: left;color: #555;}
+
+.mapArea .region  h3 {font-size: 14px;border-bottom: 1px solid #333;font-weight: bold;margin: 0 0 0 0;padding: 3px 0;display: block;line-height: 19px;width: 100%;clear: both;}
+.mapArea .region  dl {display: table;border-bottom: 1px solid #aaa;width: 100%;margin: 0 0 0 0;}
+.mapArea .region  dt {display: table-cell;width: 40px;font-weight: bold;font-size: 11px;padding: 4px 0;line-height: 16px;color: #336699;}
+.mapArea .region  dd {display: table-cell;font-size: 11px;padding: 4px 0;line-height: 16px;color: #333;}
+
+
+.mapArea .map {position:absolute;left: 211px;top: 40px;background: url(../images/map.png) 0 0 no-repeat;width: 343px;height: 507px;}
+.mapArea .map ul  {border: 0;margin: 0;}
+.mapArea .map ul li  {font-size: 11px;line-height: initial;border: 0;padding: 0;position: absolute;text-align: center;}
+.mapArea .map .num {border-radius: 100px;font-weight: bold;background-color: #336699;padding: 3px 0 0 0;color: #fff;font-size: 10px;width: 20px;height: 20px;text-align: center;border: 1px solid #fff;display: block;}
+.mapArea .map .location {font-size: 11px;font-weight: bold;/* float: left; */display: block;margin: 4px 0 0 0;text-shadow: #fff 1px 1px 0px;}
+
+
+/*
+.mapArea .map .가평 {left: 146px;top: 110px;}
+.mapArea .map .강릉 {left: 240px;top: 90px;}
+.mapArea .map .예산 {left: 90px;top: 190px;}
+.mapArea .map .포항 {left: 289px;top: 250px;}
+.mapArea .map .담양 {left: 100px;top: 330px;}
+.mapArea .map .순천 {left: 150px;top: 351px;}
+.mapArea .map .통영 {left: 220px;top: 350px;}
+*/
+.mapArea .map .대구북구 { left: 231px; top: 258px; }
+.mapArea .map .대전대덕구 { left: 152px; top: 218px; }
+.mapArea .map .서울관악구 { left: 116px; top: 130px; }
+.mapArea .map .장성 { left: 103px; top: 307px; }
+.mapArea .map .경상북도 { left: 227px; top: 204px; }
+.mapArea .map .상주 { left: 196px; top: 215px; }
+.mapArea .map .경주 { left: 279px; top: 264px; }
+.mapArea .map .광주서구 { left: 110px; top: 324px; }
+.mapArea .map .양주 { left: 121px; top: 101px; }
+.mapArea .map .임실 { left: 139px; top: 284px; }
+.mapArea .map .전라북도 { left: 128px; top: 267px; }
+.mapArea .map .인천연수구 { left: 96px; top: 136px; }
+.mapArea .map .영광 { left: 72px; top: 311px; }
+.mapArea .map .안성 { left: 142px; top: 166px; }
+.mapArea .map .장수 { left: 158px; top: 281px; }
+.mapArea .map .울산 { left: 284px; top: 290px; }
+.mapArea .map .서울성북구 { left: 122px; top: 118px; }
+.mapArea .map .음성 { left: 164px; top: 169px; }
+.mapArea .map .하남 { left: 135px; top: 124px; }
+.mapArea .map .괴산 { left: 180px; top: 187px; }
+.mapArea .map .서울용산구 { left: 119px; top: 124px; }
+.mapArea .map .충청북도 { left: 155px; top: 199px; }
+.mapArea .map .광주남구 { left: 109px; top: 327px; }
+.mapArea .map .군위 { left: 238px; top: 238px; }
+.mapArea .map .정선 { left: 244px; top: 138px; }
+.mapArea .map .보성 { left: 136px; top: 351px; }
+.mapArea .map .울릉 { left: 312px; top: 118px; }
+.mapArea .map .수원 { left: 122px; top: 147px; }
+.mapArea .map .울주군 { left: 274px; top: 291px; }
+.mapArea .map .김해 { left: 252px; top: 313px; }
+.mapArea .map .김제 { left: 111px; top: 269px; }
+.mapArea .map .장흥 { left: 115px; top: 365px; }
+.mapArea .map .영암 { left: 93px; top: 352px; }
+.mapArea .map .전라남도 { left: 83px; top: 336px; }
+.mapArea .map .영덕 { left: 283px; top: 213px; }
+.mapArea .map .파주 { left: 109px; top: 98px; }
+.mapArea .map .광명 { left: 110px; top: 131px; }
+.mapArea .map .의왕 { left: 119px; top: 139px; }
+.mapArea .map .곡성 { left: 138px; top: 318px; }
+.mapArea .map .하동 { left: 174px; top: 325px; }
+.mapArea .map .포천 { left: 139px; top: 88px; }
+.mapArea .map .연천 { left: 119px; top: 76px; }
+.mapArea .map .군산 { left: 81px; top: 260px; }
+.mapArea .map .서울영등포구 { left: 114px; top: 125px; }
+.mapArea .map .부산 { left: 267px; top: 320px; }
+.mapArea .map .해남 { left: 84px; top: 375px; }
+.mapArea .map .의령 { left: 210px; top: 303px; }
+.mapArea .map .인천부평구 { left: 101px; top: 127px; }
+.mapArea .map .함안 { left: 222px; top: 312px; }
+.mapArea .map .강원도 { left: 202px; top: 100px; }
+.mapArea .map .거창 { left: 183px; top: 276px; }
+.mapArea .map .천안 { left: 128px; top: 184px; }
+.mapArea .map .정읍 { left: 114px; top: 285px; }
+.mapArea .map .부산남구 { left: 269px; top: 325px; }
+.mapArea .map .고령 { left: 214px; top: 274px; }
+.mapArea .map .경기도 { left: 121px; top: 146px; }
+.mapArea .map .영월 { left: 227px; top: 150px; }
+.mapArea .map .영주 { left: 233px; top: 179px; }
+.mapArea .map .양산 { left: 265px; top: 302px; }
+.mapArea .map .예천 { left: 222px; top: 198px; }
+.mapArea .map .진안 { left: 152px; top: 267px; }
+.mapArea .map .대전서구 { left: 144px; top: 229px; }
+.mapArea .map .청도 { left: 247px; top: 276px; }
+.mapArea .map .영천 { left: 257px; top: 251px; }
+.mapArea .map .서울동대문구 { left: 124px; top: 120px; }
+.mapArea .map .영동 { left: 179px; top: 238px; }
+.mapArea .map .서울광진구 { left: 126px; top: 123px; }
+.mapArea .map .인천 { left: 99px; top: 131px; }
+.mapArea .map .부산금정구 { left: 268px; top: 314px; }
+.mapArea .map .진도 { left: 56px; top: 388px; }
+.mapArea .map .강릉 { left: 250px; top: 109px; }
+.mapArea .map .전주 { left: 131px; top: 267px; }
+.mapArea .map .삼척 { left: 269px; top: 147px; }
+.mapArea .map .금산 { left: 154px; top: 242px; }
+.mapArea .map .대구중구 { left: 233px; top: 263px; }
+.mapArea .map .창녕 { left: 227px; top: 292px; }
+.mapArea .map .부산동구 { left: 265px; top: 325px; }
+.mapArea .map .계룡 { left: 138px; top: 228px; }
+.mapArea .map .울산동구 { left: 292px; top: 292px; }
+.mapArea .map .여주 { left: 162px; top: 145px; }
+.mapArea .map .완도 { left: 105px; top: 401px; }
+.mapArea .map .서울노원구 { left: 126px; top: 114px; }
+.mapArea .map .인천계양구 { left: 102px; top: 122px; }
+.mapArea .map .인천미추홀구 { left: 97px; top: 130px; }
+.mapArea .map .인천남구 { left: 97px; top: 130px; }
+.mapArea .map .원주 { left: 190px; top: 141px; }
+.mapArea .map .경산 { left: 250px; top: 265px; }
+.mapArea .map .무주 { left: 171px; top: 258px; }
+.mapArea .map .광양 { left: 167px; top: 333px; }
+.mapArea .map .부산강서구 { left: 253px; top: 326px; }
+.mapArea .map .청송 { left: 266px; top: 220px; }
+.mapArea .map .기장군 { left: 277px; top: 312px; }
+.mapArea .map .목포 { left: 76px; top: 353px; }
+.mapArea .map .경남고성 { left: 212px; top: 335px; }
+.mapArea .map .무안 { left: 78px; top: 338px; }
+.mapArea .map .광주광역시 { left: 110px; top: 322px; }
+.mapArea .map .달성군 { left: 228px; top: 271px; }
+.mapArea .map .서울강동구 { left: 131px; top: 123px; }
+.mapArea .map .합천 { left: 203px; top: 285px; }
+.mapArea .map .대전중구 { left: 150px; top: 229px; }
+.mapArea .map .진천 { left: 151px; top: 179px; }
+.mapArea .map .서울종로구 { left: 119px; top: 119px; }
+.mapArea .map .서울동작구 { left: 116px; top: 127px; }
+.mapArea .map .대전 { left: 147px; top: 223px; }
+.mapArea .map .서울은평구 { left: 115px; top: 117px; }
+.mapArea .map .문경 { left: 200px; top: 194px; }
+.mapArea .map .부산해운대구 { left: 273px; top: 319px; }
+.mapArea .map .부산서구 { left: 263px; top: 328px; }
+.mapArea .map .동두천 { left: 126px; top: 92px; }
+.mapArea .map .산청 { left: 184px; top: 302px; }
+.mapArea .map .사천 { left: 193px; top: 333px; }
+.mapArea .map .홍천 { left: 196px; top: 106px; }
+.mapArea .map .경상남도 { left: 240px; top: 316px; }
+.mapArea .map .남원 { left: 151px; top: 299px; }
+.mapArea .map .화천 { left: 168px; top: 73px; }
+.mapArea .map .김천 { left: 197px; top: 248px; }
+.mapArea .map .대전유성구 { left: 144px; top: 220px; }
+.mapArea .map .의정부 { left: 125px; top: 107px; }
+.mapArea .map .부산중구 { left: 264px; top: 327px; }
+.mapArea .map .부천 { left: 104px; top: 127px; }
+.mapArea .map .대구수성구 { left: 238px; top: 266px; }
+.mapArea .map .증평 { left: 163px; top: 187px; }
+.mapArea .map .부산수영구 { left: 270px; top: 322px; }
+.mapArea .map .오산 { left: 124px; top: 155px; }
+.mapArea .map .서울금천구 { left: 113px; top: 130px; }
+.mapArea .map .함양 { left: 172px; top: 290px; }
+.mapArea .map .창원 { left: 239px; top: 316px; }
+.mapArea .map .담양 { left: 119px; top: 311px; }
+.mapArea .map .구미 { left: 216px; top: 234px; }
+.mapArea .map .당진 { left: 94px; top: 176px; }
+.mapArea .map .옹진군 { left: 19px; top: 127px; }
+.mapArea .map .봉화 { left: 256px; top: 175px; }
+.mapArea .map .울진 { left: 282px; top: 177px; }
+.mapArea .map .순천 { left: 147px; top: 335px; }
+.mapArea .map .보은 { left: 171px; top: 211px; }
+.mapArea .map .대구 { left: 234px; top: 263px; }
+.mapArea .map .태백 { left: 261px; top: 152px; }
+.mapArea .map .홍성 { left: 92px; top: 205px; }
+.mapArea .map .서산 { left: 84px; top: 184px; }
+.mapArea .map .완주 { left: 133px; top: 262px; }
+.mapArea .map .횡성 { left: 193px; top: 128px; }
+.mapArea .map .충청남도 { left: 97px; top: 197px; }
+.mapArea .map .인천동구 { left: 95px; top: 128px; }
+.mapArea .map .서울구로구 { left: 110px; top: 127px; }
+.mapArea .map .울산남구 { left: 284px; top: 293px; }
+.mapArea .map .옥천 { left: 169px; top: 226px; }
+.mapArea .map .밀양 { left: 248px; top: 294px; }
+.mapArea .map .부산북구 { left: 264px; top: 316px; }
+.mapArea .map .부여 { left: 111px; top: 233px; }
+.mapArea .map .남해 { left: 188px; top: 358px; }
+.mapArea .map .신안 { left: 30px; top: 366px; }
+.mapArea .map .철원 { left: 154px; top: 67px; }
+.mapArea .map .청양 { left: 110px; top: 215px; }
+.mapArea .map .울산중구 { left: 283px; top: 288px; }
+.mapArea .map .포항 { left: 286px; top: 250px; }
+.mapArea .map .부안 { left: 83px; top: 278px; }
+.mapArea .map .김포 { left: 96px; top: 111px; }
+.mapArea .map .인천남동구 { left: 101px; top: 133px; }
+.mapArea .map .서울서대문구 { left: 116px; top: 120px; }
+.mapArea .map .용인 { left: 133px; top: 148px; }
+.mapArea .map .서천 { left: 97px; top: 244px; }
+.mapArea .map .대구달서구 { left: 229px; top: 267px; }
+.mapArea .map .고창 { left: 92px; top: 299px; }
+.mapArea .map .논산 { left: 131px; top: 235px; }
+.mapArea .map .의성 { left: 233px; top: 222px; }
+.mapArea .map .서울성동구 { left: 123px; top: 123px; }
+.mapArea .map .구리 { left: 130px; top: 118px; }
+.mapArea .map .경기광주 { left: 141px; top: 135px; }
+.mapArea .map .서울중랑구 { left: 127px; top: 119px; }
+.mapArea .map .강진 { left: 104px; top: 367px; }
+.mapArea .map .인제 { left: 209px; top: 77px; }
+.mapArea .map .세종 { left: 132px; top: 223px; }
+.mapArea .map .속초 { left: 228px; top: 71px; }
+.mapArea .map .순창 { left: 126px; top: 300px; }
+.mapArea .map .제주시 { left: 54px; top: 450px; }
+.mapArea .map .대구서구 { left: 230px; top: 262px; }
+.mapArea .map .평택 { left: 118px; top: 167px; }
+.mapArea .map .성주 { left: 207px; top: 259px; }
+.mapArea .map .서울서초구 { left: 123px; top: 129px; }
+.mapArea .map .안양 { left: 117px; top: 136px; }
+.mapArea .map .양구 { left: 192px; top: 71px; }
+.mapArea .map .이천 { left: 155px; top: 152px; }
+.mapArea .map .서울강남구 { left: 125px; top: 127px; }
+.mapArea .map .고양 { left: 108px; top: 114px; }
+.mapArea .map .광주동구 { left: 117px; top: 325px; }
+.mapArea .map .서울중구 { left: 120px; top: 122px; }
+.mapArea .map .과천 { left: 121px; top: 132px; }
+.mapArea .map .울산북구 { left: 289px; top: 286px; }
+.mapArea .map .양양 { left: 234px; top: 84px; }
+.mapArea .map .충주 { left: 183px; top: 168px; }
+.mapArea .map .화순 { left: 121px; top: 334px; }
+.mapArea .map .성남 { left: 130px; top: 131px; }
+.mapArea .map .광주광산구 { left: 103px; top: 322px; }
+.mapArea .map .칠곡 { left: 224px; top: 251px; }
+.mapArea .map .함평 { left: 86px; top: 327px; }
+.mapArea .map .서울강북구 { left: 121px; top: 115px; }
+.mapArea .map .부산연제구 { left: 268px; top: 320px; }
+.mapArea .map .군포 { left: 114px; top: 140px; }
+.mapArea .map .익산 { left: 120px; top: 250px; }
+.mapArea .map .서울양천구 { left: 110px; top: 125px; }
+.mapArea .map .구례 { left: 155px; top: 316px; }
+.mapArea .map .고흥 { left: 142px; top: 371px; }
+.mapArea .map .청주 { left: 155px; top: 198px; }
+.mapArea .map .서울강서구 { left: 108px; top: 121px; }
+.mapArea .map .인천서구 { left: 94px; top: 122px; }
+.mapArea .map .서울송파구 { left: 128px; top: 126px; }
+.mapArea .map .태안 { left: 48px; top: 195px; }
+.mapArea .map .춘천 { left: 175px; top: 95px; }
+.mapArea .map .아산 { left: 118px; top: 186px; }
+.mapArea .map .공주 { left: 126px; top: 212px; }
+.mapArea .map .진주 { left: 200px; top: 319px; }
+.mapArea .map .서울도봉구 { left: 122px; top: 113px; }
+.mapArea .map .서울마포구 { left: 114px; top: 122px; }
+.mapArea .map .제주도 { left: 55px; top: 460px; }
+.mapArea .map .부산사하구 { left: 260px; top: 334px; }
+.mapArea .map .부산영도구 { left: 267px; top: 330px; }
+.mapArea .map .예산 { left: 105px; top: 197px; }
+.mapArea .map .가평 { left: 152px; top: 101px; }
+.mapArea .map .남양주 { left: 137px; top: 115px; }
+.mapArea .map .부산진구 { left: 265px; top: 321px; }
+.mapArea .map .영양 { left: 273px; top: 195px; }
+.mapArea .map .부산사상구 { left: 261px; top: 322px; }
+.mapArea .map .대구남구 { left: 232px; top: 266px; }
+.mapArea .map .여수 { left: 160px; top: 381px; }
+.mapArea .map .안산 { left: 108px; top: 142px; }
+.mapArea .map .광주북구 { left: 115px; top: 320px; }
+.mapArea .map .보령 { left: 74px; top: 223px; }
+.mapArea .map .부산동래구 { left: 268px; top: 318px; }
+.mapArea .map .안동 { left: 242px; top: 205px; }
+.mapArea .map .강화군 { left: 67px; top: 110px; }
+.mapArea .map .대구동구 { left: 240px; top: 258px; }
+.mapArea .map .대전동구 { left: 147px; top: 223px; }
+.mapArea .map .양평 { left: 161px; top: 125px; }
+.mapArea .map .서울 { left: 119px; top: 121px; }
+.mapArea .map .거제 { left: 235px; top: 347px; }
+.mapArea .map .평창 { left: 227px; top: 123px; }
+.mapArea .map .화성 { left: 109px; top: 155px; }
+.mapArea .map .시흥 { left: 105px; top: 136px; }
+.mapArea .map .통영 { left: 222px; top: 356px; }
+.mapArea .map .인천중구 { left: 85px; top: 131px; }
+.mapArea .map .제천 { left: 200px; top: 166px; }
+.mapArea .map .강원고성 { left: 220px; top: 52px; }
+.mapArea .map .동해 { left: 266px; top: 126px; }
+.mapArea .map .단양 { left: 222px; top: 170px; }
+.mapArea .map .나주 { left: 99px; top: 336px; }
+.mapArea .map .서귀포 { left: 57px; top: 468px; }
+
+
+
+.festivalArea {display: block;overflow: hidden;position: relative;}
+
+.festivalArea h2 {   }
+.festivalArea h2 .title {   }
+.festivalArea .festivalInfoWrap {display: block;overflow: hidden;clear: both;}
+.festivalArea .picture {width: 280px;height: 187px;display: block;float: left;background-size: cover !important;margin: 0 20px 15px 0;overflow: hidden;}
+.festivalArea .festivalInfo {float: left;width: 467px;margin: 0 0 5px 0;overflow: hidden;}
+.festivalArea .festivalInfo .desc {font-size: 12px;float: left;width: 100%;margin: 0 0 5px 0;}
+.festivalArea .festivalInfo h3 {font-size: 24px;font-weight: bold;margin: 0;padding: 0;border: 0;float: left;}
+.festivalArea .festivalInfo .date {float: right;font-size: 14px;margin: 9px 0 0 0;}
+/* modified by leeho */
+/*.festivalArea .festivalInfo p {float: left;font-size: 14px;line-height: 22px;margin: 7px 0 0 0;padding: 0;text-align: justify;}*/
+.festivalArea .festivalInfo p {float: left;font-size: 14px;line-height: 22px;margin: 7px 0 0 0;padding: 0;text-align: justify; overflow: hidden; max-height: 110px;}
+.festivalArea .festivalInfo ul {float: left;border: 0;margin: 7px 0 0 0;}
+.festivalArea .festivalInfo ul li {font-size: 11px;line-height: initial;border: 0;padding: 0;float: left;color: #666;padding: 0 7px 5px 0;}
+.festivalArea ul.festivalList  {border: 0;padding: 15px 0 20px 0;clear: both;display: block;overflow: hidden;}
+
+.festivalArea ul.festivalList  li {border: 0;padding: 0;font-size: 16px;/* list-style-type: disc; *//* list-style-position: inside; *//* clear: both; */float: left;display: block;line-height: initial;width: 365px;}
+.festivalArea ul.festivalList  li:nth-child(1n ) { float:left;  }
+.festivalArea ul.festivalList  li:nth-child(2n) { float:right;  }
+.festivalArea ul.festivalList  li .picture {width: 120px;height: 120px;display: block;background-size: cover !important;margin: 0;float: left;margin: 0 15px 15px 0;}
+.festivalArea ul.festivalList  li .festivalTitle {display: block;float: left;width: 230px;font-size: 16px;font-weight: bold;margin: 0 0 5px 0;}
+.festivalArea ul.festivalList  li .date {float: left;display: block;width: 230px;font-size: 12px;font-weight: normal;margin: 0 0 5px 0;}
+.festivalArea ul.festivalList  li p {font-size: 14px;line-height: 22px;width: 230px;float: left;padding: 0;height: 43px;overflow: hidden;margin: 0 0 7px 0;}
+.festivalArea ul.festivalList  li ul.hashTag {border: 0;margin: 0;float: left;width: 230px;}
+.festivalArea ul.festivalList  li ul.hashTag li {font-size: 11px;border: 0;padding: 0;color: #666;width: auto;display: block;float: left;margin: 0 7px 5px 0;}
+
+.itemArea {clear: both;display: block;overflow: hidden;margin: 0 0 20px 0;position: relative;}
+.itemArea.location {   }
+
+.itemArea h3 {font-size: 24px;font-weight:bold;border-bottom: 1px solid #000;margin: 0 0 10px 0;padding: 20px 0 6px 0;display: block;line-height: inherit;}
+.itemArea .item {display: block;float: left;width: 200px;padding: 0 20px 0 0;}
+.itemArea .item .picture {width: 180px;height: 120px;display: block;background-size: cover !important;margin: 0 0 10px 0;}
+.itemArea .item h4 {font-size: 16px;font-weight: bold;margin: 0 0 5px 0;padding: 0;display: block;}
+.itemArea .item .desc {font-size: 11px;margin: 0 0 5px 0;display: block;color: #666;}
+.itemArea .item p {font-size: 14px;line-height: 22px;padding: 0;text-align: left;display: block;margin: 15px 0 15px 0;max-height: 110px;overflow: hidden;}
+.itemArea .item ul {border: 0;margin: 0;}
+.itemArea .item ul li {border: 0;margin: 0 7px 4px 0;padding: 0;font-size: 11px;font-weight: normal;line-height: initial;float: left;color: #666;}
+
+.itemArea ul.itemList {border: 0;margin: 0;width: 156px;float: right;}
+.itemArea ul.itemList li {/* width: 20%; */font-size: 14px;line-height: 32px;border: 0;padding: 0;list-style-type: disc;list-style-position: inside;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;display: block;}
+.itemArea ul.itemList li:before {content:'●';font-size: 6px;vertical-align: middle;margin: 0 10px 0 0;color: #666;}
+
+.moreinfo {display: block;overflow: hidden;position: relative;}
+.moreinfo p {border-bottom: 1px solid #333;font-size: 16px;line-height: initial;padding: 20px 0 6px 0;text-align: left;}
+.moreinfo p b {   }
+.moreinfo ul {border: 0;margin: 10px 0 0 0;}
+.moreinfo ul li {border: 0;font-size: 14px;list-style-type: disc;list-style-position: inside;line-height: initial;padding: 5px 0 5px 10px;}
+.moreinfo ul li .title {font-size: 12px;}
+.moreinfo ul li .url {   }
+.moreinfo ul li .url a {   }
+
+.ratingArea {clear: both;}
+.festivalArea table {float: right;margin: 14px 0 0 0;}
+.festivalArea table tr {   }
+.festivalArea table th {font-size: 12px;font-weight: bold;padding: 3px 5px 0 13px;/* width: 50px; */color: #666;}
+.festivalArea table td {font-size: 14px;padding: 3px;font-weight: normal;/* width: 78px; */}
+.festivalArea table td .starOn  { color:#FF6600;   }
+.festivalArea table td .starOff  {color: #eee;}
+
+.compareChartItem { width:50%; float:left; position: relative;}
+.compareChartItem .compareChart {width:100%;height: 180px;}
+
+.compareChartItem dl {display: table;width: 93%;border-top: 2px solid #aaa;border-bottom: 1px solid #aaa;margin: 0 auto 30px auto;padding: 10px 0;}
+.compareChartItem dt {/* float:left; */font-weight: bold;font-size: 12px;display: table-cell;text-align: right;padding: 0 7px 0 0;color: #444;}
+.compareChartItem dd {/* float:left; */display: table-cell;text-align: left;}
+
+.compareChartItem dd .up, .vsTable .up, .summaryDesc .up {color: #dc4c3c;}
+.compareChartItem dd .down, .vsTable .down, .summaryDesc .down {color: #4772c1;}
+
+
+.stockSummaryTable {width: 100%;/* margin: 20px 0 0 0; */width: 58%;float: left; position: relative;}
+.stockSummaryTable .sectorAnalysis {   }
+.stockSummaryTable .alikeLineCompare {   }
+.stockSummaryTable h4 {font-size: 16px;font-weight: bold;margin: 15px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.stockSummaryTable table {width: 100%;border-collapse: initial;border-spacing: 1px;}
+.stockSummaryTable tr {   }
+/* modified by leeho */
+.stockSummaryTable th {text-align: center; border-bottom: 1px solid #aaa;font-weight: bold;padding: 5px 0;background-color: #eee;font-size: 12px;/* border-top: 1px solid #aaa; */}
+.stockSummaryTable td {border-bottom: 1px solid #ddd;text-align: center;padding: 5px 0;font-size: 12px;}
+.stockSummaryArea {width: 38%;float:right;}
+.stockSummaryArea h4 {font-size: 16px;font-weight: bold;margin: 15px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.section p.summaryDesc {font-size: 14px;line-height: 26px;padding: 0;text-align: justify;margin: 10px 0 0 0;}
+
+.alikeLineChart {width: 100%;height: 915px;float: left;margin: 26px 0 0 0; position: relative;}
+.alikeLineTable {float: right;width: 32%;margin: 0;}
+.alikeLineTable table {width: 100%;border-collapse: initial;border-spacing: 1px;}
+.alikeLineTable tr {   }
+.alikeLineTable th {border-bottom: 1px solid #ddd;font-weight: bold;padding: 5px 0;background-color: #eee;font-size: 12px;}
+.alikeLineTable td {border-bottom: 1px solid #ddd;text-align: center;padding: 12px 0;font-size: 12px;}
+.section p.alikeLineDesc {clear: both;font-size: 14px;line-height: 24px;padding: 20px 0 10px 0;text-align: justify;}
+
+.vsChart {width: 100%;height: 320px; position: relative;}
+
+.vsArea {display: block;clear: both;margin: 20px 0 0 0; position: relative;}
+.vsArea .stock {width: 48%;float:left;}
+.vsArea .stock:nth-child(2) {  float:right;  }
+.vsArea .stock h4 {font-size: 20px;font-weight:bold;margin: 5px 0;padding: 0 0 5px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.vsArea .stock .stockGraph {width: 100%;height: 290px;}
+.vsArea .stock .item {width:100%;height: 220px;}
+.section p.vsDesc {clear: both;font-size: 14px;line-height: 24px;padding: 20px 0 10px 0;text-align: justify;}
+
+.vsTable {/* float: right; */width: 100%;margin: 15px 0 5px 0; position: relative;}
+.vsTable table {width: 100%;border-collapse: collapse;border-spacing: 1px;}
+.vsTable tr:first-child {border-top: 1px solid #999;}
+/* modified by leeho */
+.vsTable th {text-align: center;border-bottom: 1px solid #d8d8d8;font-weight: bold;padding: 5px 0;background-color: #eee;font-size: 12px;border-right: 1px solid #d8d8d8;}
+.vsTable th:last-child{border-right:none}
+.vsTable td {border-bottom: 1px solid #ddd;text-align: center;padding: 5px 0;font-size: 12px;}
+.vsTable th.header {background-color: #ddd;/* border-right: 1px solid #ccc; */}
+.vsTable td.header {font-weight: bold;}
+
+.section h1.stock {font-size: 30px;font-weight: bold;margin: 17px 0 0 0px;display: inline-block;background-color: #222222;padding: 5px 7px 2px 6px;color: white;}
+.section .codeNumber {font-size: 16px;font-weight: 600;margin: 8px 0 0 2px;display: block;color: #676767;}
+
+.summaryInfoWarp {width: 342px;float: left;}
+.summaryInfo {  }
+.summaryInfo .forecastProbability {display: block;font-size: 20px;font-weight: bold;color: #888;margin: 5px 0 20px 0;}
+.summaryInfo .forecastProbability.up { color: #dc4c3c;   }
+.summaryInfo .forecastProbability.down {color: #4772c1;}
+.summaryInfo .prediction {display: block;font-size: 20px;font-weight: bold;color: #ff6600;}
+.summaryInfo dl {   }
+.summaryInfo dt {float: left;font-size: 14px;line-height: 24px;margin: 0 10px 0 0;font-weight: bold;}
+.summaryInfo dd { font-size: 14px;line-height: 24px;}
+
+.keyData { width: 180px;float: right;margin: 20px 0 0 26px;}
+.keyData h4 {font-size: 18px;font-weight: bold;margin: 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #aaa;}
+.keyData table {width: 100%;}
+.keyData tr {   }
+.keyData th {text-align: left;font-size: 12px;font-weight: bold;border-bottom: 1px solid #aaa;color: #666;white-space: nowrap;}
+.keyData td {font-size: 12px;padding: 6px 0;border-bottom: 1px solid #aaa;text-align: right;color: #666;}
+
+.summaryInfoWarp2 {width: 342px;float: left;}
+.summaryInfo2 {  }
+.summaryInfo2 .forecastProbability {display: block;font-size: 20px;font-weight: bold;}
+.summaryInfo2 .forecastProbability.up {color: #dc4c3c;margin: 3px 0 15px 2px;}
+.summaryInfo2 .forecastProbability.down {color: #4772c1;}
+.summaryInfo2 .prediction {display: block;font-size: 20px;font-weight: bold;color: #ff6600;}
+.summaryInfo2 dl {overflow: hidden;}
+.summaryInfo2 dt {font-size: 13.5px;line-height: 23px;margin: 0px 5px 0 0;font-weight: bold;float: left;}
+.summaryInfo2 dd {font-size: 13px;line-height: 23px;float: left;}
+
+.keyData2 {width: 180px;float: right;margin: 40px 0 0 12px;}
+.keyData2 h4 {font-size: 17px;font-weight: bold;margin: 0;padding: 0px 0 5px 0;display: block;line-height: initial;border-bottom: 1px solid #aaa;color: #4772c1;}
+.keyData2 table {width: 100%;}
+.keyData2 tr {   }
+.keyData2 th {text-align: left;font-size: 12px;font-weight: bold;border-bottom: 1px solid #aaa;color: #666;white-space: nowrap;}
+.keyData2 td {font-size: 12px;padding: 6.5px 0;border-bottom: 1px solid #aaa;text-align: right;color: #666;}
+
+
+.investmentIndex {/* clear: both; */width: 180px;float: right;margin: 20px 0 0 0;}
+.investmentIndex h4 {font-size: 18px;font-weight: bold;margin: 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #aaa;}
+.investmentIndex table {width: 100%;}
+.investmentIndex tr {   }
+.investmentIndex th {text-align: left;font-size: 12px;font-weight: bold;border-bottom: 1px solid #aaa;color: #666;white-space: nowrap;}
+.investmentIndex td {font-size: 12px;padding: 6px 0;border-bottom: 1px solid #aaa;text-align: right;color: #666;}
+
+.investmentIndex2 {/* clear: both; */width: 180px;float: right;margin: 40px 0 0 0;}
+.investmentIndex2 h4 {font-size: 17px;font-weight: bold;margin: 0;padding: 0px 0 5px 0;display: block;line-height: initial;border-bottom: 1px solid #aaa;color: #4772c1;}
+.investmentIndex2 table {width: 100%;}
+.investmentIndex2 tr {   }
+.investmentIndex2 th {text-align: left;font-size: 12px;font-weight: bold;border-bottom: 1px solid #aaa;color: #666;white-space: nowrap;}
+.investmentIndex2 td {font-size: 12px;padding: 5.5px 0;border-bottom: 1px solid #aaa;text-align: right;color: #666;}
+
+.topSummary {border-bottom:2px solid #222;overflow: hidden;border-top: 4px solid #222;padding: 0 0 13px 0;position: relative;}
+.topSummary2 {overflow: hidden;padding: 11px 21px 18px 21px;position: relative;margin-bottom: 10px;border: 1px solid #c7c7c7;box-shadow: 5px 5px 6px #eeeeee;border-top: 3px solid #333;}
+.chartStockArea {padding: 10px 0 10px 0;/* border-bottom: 1px solid #d8d8d8; */margin: 0 0 5px 0;position: relative;}
+
+.financialMetrics {width: 100%; position: relative;}
+.financialMetrics h4 {font-size: 16px;font-weight: bold;margin: 15px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.financialMetrics table {width: 100%;border-collapse: initial;border-spacing: 1px;}
+.financialMetrics tr {   }
+.financialMetrics th {border-bottom: 1px solid #aaa;text-align: center;font-weight: bold;padding: 5px 0;background-color: #eee;font-size: 12px;/* border-top: 1px solid #aaa; */}
+.financialMetrics td {border-bottom: 1px solid #ddd;text-align: center;padding: 8px 0;font-size: 12px;}
+.financialMetrics h4 {font-size: 16px;font-weight: bold;margin: 40px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.financialMetrics p.summaryDesc {font-size: 14px;line-height: 24px;padding: 0;text-align: justify;margin: 17px 0 0 0;}
+
+
+.sectorItemAnalysis {width: 100%; position: relative;}
+.sectorItemAnalysis h4 {font-size: 16px;font-weight: bold;margin: 15px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.sectorItemAnalysis table {width: 100%;border-collapse: initial;border-spacing: 1px;}
+.sectorItemAnalysis tr {   }
+.sectorItemAnalysis th {border-bottom: 1px solid #aaa;text-align: center;font-weight: bold;padding: 5px 0;background-color: #eee;font-size: 12px;/* border-top: 1px solid #aaa; */}
+.sectorItemAnalysis td {border-bottom: 1px solid #ddd;text-align: center;padding: 8px 0;font-size: 12px;}
+.sectorItemAnalysis h4 {font-size: 16px;font-weight: bold;margin: 15px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;border-bottom: 1px solid #000;}
+.sectorItemAnalysis p.summaryDesc {font-size: 14px;line-height: 22px;padding: 0;text-align: justify;margin: 10px 0 20px 0;}
+.stockSummary {/* display: block; *//* margin: 20px 0 0 0; */}
+
+.section.stock {   }
+
+
+h2 .title {   }
+h2 .title .small {font-size: 20px;}
+
+/* 호텔 리뷰 분석 리포트 */
+.report.hotel{font-size: 16px;background: #4a60a2;color: #fff;padding: 7px 20px;background-color: #1fc8db;background-image: linear-gradient(141deg, #2ba2e8 0%, #1f9edb 51%, #2cb5e8 75%);border: 1px solid #24a0df;}
+.topSummary.hotel h1.hotel{width:100%;font-size: 34px;padding: 10px 0 5px 0;font-weight: normal;}
+.topSummary.hotel{border-top: none;}
+.topSummary.hotel div.location{font-size: 16px;color: #5179b5; /*background: url(../images/hotel/icon_map.png) left 0 no-repeat; padding-left:16px;*/}
+.topSummary.hotel .hotel_summaryInfoWarp{margin-top: 33px;border-top: 1px solid #d0cdcd;}
+.topSummary.hotel .hotel_summaryInfoWarp .info01{width: 375px;display: inline-block;}
+.topSummary.hotel .hotel_summaryInfoWarp .info01 div{float: left;padding-right: 38px;}
+.topSummary.hotel .hotel_summaryInfoWarp .info01 span.tit{display: block;padding-bottom: 5px;color: #4f5567;font-size: 13px;margin-right: 4px;margin-top: 12px;}
+.topSummary.hotel .hotel_summaryInfoWarp .info01 span.num{font-size: 21px;font-family: Helvetica Neue, Arial, sans-serif;color: #2b2b2b;font-weight: bold;}
+.topSummary.hotel .hotel_summaryInfoWarp .info01 span.num b{ font-weight:normal; font-size:14px; }
+.topSummary.hotel .hotel_summaryInfoWarp .info01{}
+.topSummary.hotel .hotel_summaryInfoWarp .info02{width: 365px;float: right;}
+.topSummary.hotel .hotel_summaryInfoWarp .info02 dt{float: left;width: 85px;font-size: 13px;padding: 10px 0;color: #4f5567;padding-left: 10px; line-height: normal; font-weight: normal;}
+.topSummary.hotel .hotel_summaryInfoWarp .info02 dd{text-align: right;font-size: 12px; padding: 10px 0;color: #000; line-height: normal; font-weight: normal;}
+.topSummary.hotel .hotel_summaryInfoWarp .info02 dd.line{border-bottom:1px solid #dedede;}
+
+/* 호텔리뷰 1:1 비교*/
+.topSummary.hotel .w50{width:47.5%;}
+.topSummary.hotel .w50 .info02{border-bottom:1px solid #ccc;}
+.topSummary.hotel .w50 .info01 div{padding-left: 9px;}
+.topSummary.hotel .w50 .hotel_summaryInfoWarp .info01{ padding-bottom: 10px; }
+.topSummary.hotel .w50 .hotel_summaryInfoWarp .info02 dd{ text-align: left; }
+.topSummary.hotel .w50 .InfoWarp{padding-bottom: 10px;}
+.topSummary.hotel .w50  h1.hotel{ font-size:24px; font-weight: bold;}
+
+.topSummary.hotel .hotelAverage{overflow: hidden;float: left;margin-right: 40px;}
+.topSummary.hotel .InfoWarp{border-bottom: 1px solid #d0cdcd;overflow: hidden;}
+.topSummary.hotel .hotelAverageArea .hotelCompare{margin-top: 11px;}
+.topSummary.hotel .hotelAverageArea .hotelCompare div{position: relative;background: #efefef;display: inline-block;height: 12px;width: 220px;/* margin-top: 2px; */vertical-align: middle;}
+.topSummary.hotel .hotelAverageArea .hotelCompare span{width: 150px;display: inline-block;font-size: 12px;color: #1f1f1f;}
+.topSummary.hotel .hotelAverageArea .hotelCompare b{width: 30%;height: 12px;background: #6b5454;display: inline-block;}
+.topSummary.hotel .hotelAverageArea .hotelCompare s{position: absolute;right: 0px; text-decoration: inherit;font-size: 11px;color: #525252;}
+.topSummary.hotel .hotelAverage .tit, .siteAverage .tit {color: #4f5567;font-size: 14px;margin-top: 15px;margin-bottom: 16px;}
+.topSummary.hotel .siteAverage{width: 355px;float:right;height:130px;}
+
+/* 상대 긍정률 분포*/
+.distributionChart {position: relative;margin-top: 27px;margin-left: 0px;}
+.distributionChart .chartTable {display:table;width: 80%;height: 100%;margin-left: 90px;border-collapse: collapse;table-layout: fixed;}
+.distributionChart .chartTable .tableRow{display:table-row;height: 50px;}
+.distributionChart .tableRow .tableCol{display:table-cell;border: 1px solid #ccc;padding: 10px;vertical-align: middle;}
+.distributionChart .tableRow .tableCol div{min-height: 70px;}
+.distributionChart .chartTable .tableRow div p{text-align: center;font-size: 13px;margin: 0px; padding: 0px;line-height: 24px;display: table;width: 100%; line-height:18px;}
+
+.distributionChart .chartY{width: 90px;height: 100%;position: absolute;/* margin-left: 20px; */}
+.distributionChart .chartY div{height: 30%;width: 100%;overflow: hidden;display: table;}
+.distributionChart .chartY .labelY span{height: 100%;display: inline-block;vertical-align: middle;padding: 0px;line-height: inherit;text-align: center;width: 100%;font-size: 12px;padding-right: 0px;color: #4b5565;display: table-cell;}
+.distributionChart .chartX{width: 80%;margin-left: 90px;}
+.distributionChart .chartX div{width: 32.8%;overflow: hidden;display:inline-block;padding-top: 7px;color: #4b5565;}
+.distributionChart .chartX .labelX span{height: 100%;display: inline-block;vertical-align: middle;padding: 0px;line-height: inherit;text-align: right;width: 100%;font-size: 12px;padding-right: 0px;text-align: center;}
+.distributionChart .axisTitleY{position: absolute;bottom: 9px;right: -12px;font-size: 11px;line-height: 15px;color: #38404c;}
+.distributionChart .axisTitleX{position: absolute;top: -15px;left: 0px;font-size: 11px;line-height: 15px;text-align: center;color: #38404c;}
+
+/* 호텔 리뷰 테이블*/
+.hotelReviewTable{}
+.hotelReviewTable td:nth-child(1){text-align:center !important;}
+.hotelReviewTable td.col3{text-align: left !important;padding-left: 10px;}
+.hotelReviewTable td.col3 em{float: right;/* border-left: 1px solid #dcdcdc; */display: inline-block;width: 97px;padding: 0px;padding-top: 5px;/* padding-left: 10px; */}
+.hotelReviewTable td.col3 .date{font-family:Helvetica Neue, Arial, sans-serif;vertical-align: top;padding-top: 4px;display: inline-block;font-size: 11px;float: left;}
+.hotelReviewTable td.col3 .txt{margin-top: 3px;line-height: 22px;float: left;width: 79%;border-right: 1px solid #dcdcdc;padding-right: 10px;}
+
+.hotelReviewTable .siteLogo {/* margin-top: 5px; *//* display: inline-block; */display: block;}
+.hotelReviewTable .siteLogo span{height: 18px;overflow: hidden;text-indent: -9999px;display: inline-block;/* width: 76px; */background-size: contain;float: left;}
+.hotelReviewTable .siteLogo .tripadvisor{background: url(../images/hotel/tripadvisor.png) 0 0 no-repeat;background-size: contain;width: 89px;}
+.hotelReviewTable .siteLogo .dailyhotel{background: url(../images/hotel/dailyhotel.png) 0 0 no-repeat;background-size: contain;width: 75px;}
+.hotelReviewTable .siteLogo .yanolja{background: url(../images/hotel/yanolja.png) 0 0 no-repeat;background-size: contain;width: 48px;}
+.hotelReviewTable .siteLogo .bookingcom{background: url(../images/hotel/bookingcom.png) 0 0 no-repeat;background-size: contain;width: 78px;}
+
+/* 컬러 대체*/
+.excellent{background-color: #0099ff;}
+.good{background-color: #C1E1FF;}
+.fair{background-color: #DEEBF7;}
+.poor{background-color: #FFC5C6;}
+.worst{background-color: #FF696D;}
+
+/* 호텔 리뷰 분석 리포트 */
+.report.region{font-size: 16px;background: #4a5263;color: #ffffff;padding: 7px 10px;border-top: 2px solid #1d1d1d;}
+.topSummary.region .area{ padding: 10px; background: #ccc; }
+.topSummary.region h1.region{width:100%;font-size: 34px;padding: 35px 0 5px 5px;font-weight: normal;}
+.topSummary.region h1.region span{padding:0 0 0px 15px;margin: 0  0 0 15px;font-weight: normal;color: #917240;border-left: 1px solid #ccc;font-size: 18px;}
+.topSummary.region{border-top: none;}
+.topSummary.region div.location{font-size: 16px;color: #5179b5;}
+
+.topSummary.region .region_summaryInfoWarp{margin-top: 10px;}
+.topSummary.region .region_summaryInfoWarp .info01{display: inline-block;vertical-align: top;padding-right: 12px;}
+.topSummary.region .region_summaryInfoWarp .info01 div{float: left;}
+.topSummary.region .region_summaryInfoWarp .info01 span.tit{display: block;padding-bottom: 5px;color: #000000;font-size: 13px;margin-right: 4px;margin-top: 12px;}
+.topSummary.region .region_summaryInfoWarp .info01 span.num{font-size: 21px;font-family: Helvetica Neue, Arial, sans-serif;color: #2b2b2b;font-weight: bold;}
+.topSummary.region .region_summaryInfoWarp .info01 span.num b{font-weight:normal;font-size:14px;padding-left: 2px;}
+.topSummary.region .region_summaryInfoWarp .info01{}
+.topSummary.region .region_summaryInfoWarp .info02{width: 683px;display: inline-block;vertical-align: top;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData{float: left;width: 554px;font-size: 12px;color: #4f5567;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData:nth-child(1){width: 129px;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData:nth-child(1) .txt{font-size: 15px;font-family: Helvetica Neue, Arial, sans-serif;color: #2b2b2b;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData:nth-child(2) .txt div{float: left; padding-top: 2px;margin-right: 10px;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData:nth-child(2) .txt div b{padding: 2px 8px;margin-right: 6px;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData .tit{display: block;padding-bottom: 8px;color: #000000;font-size: 13px;margin-right: 4px;margin-top: 12px;font-weight: normal;}
+
+.topSummary.region .region_summaryInfoWarp .box{width: 46%;margin-top: 20px;float: left;margin: 20px;}
+.topSummary.region .region_summaryInfoWarp .info03 dl{}
+.topSummary.region .region_summaryInfoWarp .info03 dt{float: left;padding: 10px 2px;font-size: 13px;padding-left: 5px;}
+.topSummary.region .region_summaryInfoWarp .info03 dd{border-bottom: 1px solid #f1f1f1;padding: 10px 2px;text-align: right;}
+.topSummary.region .region_summaryInfoWarp .info03 dd span{font-family: Helvetica Neue, Arial, sans-serif;}
+
+.topSummary.region .region_summaryInfoWarp .info03 dd em{display: inline-block;font-size: 12px;padding: 0px;width: 89px;padding-right: 5px;}
+.topSummary.region .region_summaryInfoWarp .info03 dd em s{font-size:9px;text-decoration: none;padding-left: 5px;}
+.topSummary.region .region_summaryInfoWarp .info03 .box .tit{font-size: 14px;border-bottom: 1px solid #ccc;padding: 10px 0 8px 0;letter-spacing: 0.5px;margin-top: 10px;color: #000000;padding-left: 5px;padding-right: 5px;}
+.topSummary.region .region_summaryInfoWarp .info03 .fr{ float: right; }
+.rankingnNum{display: inline-block;font-size: 21px;color: #fff;}
+.rankingnNum span.titRank{color: #fff; border-radius: 20px;font-size: 14px;padding: 5px 10px;margin-top: -3px;display: inline-block;}
+.rankingnNum span.num{font-size: 22px; font-family: Helvetica Neue, Arial, sans-serif;font-weight: bold;vertical-align: bottom;display: inline-block;}
+.rankingnNum span.num b{font-size:12px;padding-left: 2px;}
+
+.rankingnNum.type01 .titRank{background: #7176ce;}
+.rankingnNum.type01 .num{color: #7176ce;}
+.rankingnNum.type02 .titRank{background: #2cbfa4;}
+.rankingnNum.type02 .num{color: #08ad8f;}
+.rankBg01{background: #f7f8fd;}
+.rankBg02{background: #f7fcfd;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData .txt div b.type01{color: #7176ce;border: 1px solid #7176ce !important;border-radius: 5px;}
+.topSummary.region .region_summaryInfoWarp .info02 .infoData .txt div b.type02{color: #04ad8f;border: 1px solid #04ad8f !important;border-radius: 5px;}
+.InfoWarp .bg{background: #f5f6f7;padding-bottom: 10px;padding-left: 10px;border: 1px solid #dedede;border-radius: 5px;}
+
+s.up{ color: cornflowerblue;}
+s.down{ color: lightcoral;}
+
+.mr0{ margin-right: 5px !important;}
+.ml0{ margin-left: 5px !important; }
+
+.download {background:url(../images/download_excel.png) 0 0 no-repeat;color: transparent;overflow: hidden;width: 17px;height: 0;padding: 18px 0 0px 0;float: right;opacity: 0.7;margin: 0 0 2px 0;}
+.download:hover {background:url(../images/download_excel.png) 0 -18px no-repeat;color: transparent;overflow: hidden;width: 17px;height: 0;padding: 18px 0 0 0;float: right; opacity: 1; }
+
+.container > .download {position: absolute;left: 7px;top: 7px;z-index: 1000;}
+
+h2 .download {margin: 19px 0 0 0;}
+h3 .download {position: absolute;right: 7px;top: 20px;border: 1px solid red;}
+h4 .download {margin: 4px 0 0 0;}
+
+.vsTable .download,
+.vsArea .download {position: absolute;right: 7px;top: 15px;z-index: 1000;}
+.chartStockArea .download {position: absolute;right: 0;top: 10px;z-index: 1000;}
+
+.layoutTable1 .download {position: absolute;right: 10px;top: 6px;z-index: 1000;}
+.layoutTable2 .download {position: absolute;right: 10px;top: 6px;z-index: 1000;}
+.layoutTable3 .download {position: absolute;right: 10px;top: 6px;z-index: 1000;}
+
+.chartArea .download, 
+.customChartArea .download,
+.vsChart .download,
+.mapArea .download,
+.festivalArea .download,
+.itemArea .download,
+.moreinfo .download,
+.table .download,
+.compareChartItem .download,
+.compareChartItem2 .download,
+.alikeLineChart .download,
+.topSummary .download,
+.stockSummaryTable .download,
+.financialMetrics .download,
+.sectorItemAnalysis .download,
+.mainCover .download,
+.tripSummary .download,
+.courseSummary .download
+{position: absolute;right: 7px;top: 7px;z-index: 1000;}
+
+.download {display: none;}
+
+.container:hover > .download {display: block;}
+h2:hover .download,
+h3:hover .download,
+h4:hover .download,
+.vsTable:hover .download,
+.vsArea:hover .download,
+.vsChart:hover .download,
+.chartStockArea:hover .download,
+.chartArea:hover .download,
+.customChartArea:hover .download,
+.mapArea:hover .download,
+.festivalArea:hover .download,
+.itemArea:hover .download,
+.moreinfo:hover .download,
+.table:hover .download,
+.compareChartItem:hover .download,
+.compareChartItem2:hover .download,
+.alikeLineChart:hover .download,
+.topSummary:hover .download,
+.stockSummaryTable:hover .download,
+.financialMetrics:hover .download,
+.sectorItemAnalysis:hover .download,
+.mainCover:hover .download,
+.tripSummary:hover .download,
+.courseSummary:hover .download 
+{display: block;}
+
+.R {float: right; width: 64%;}
+
+/*영현*/
+.summaryInfo2 .explain{padding:0;display: inline-block;width: 342px;font-size: 12px;color: #666;margin-left: 10px;}
+.summaryInfo2 dl dt {padding-left: 11px;background: url(../images/dot.png) 1px 8px no-repeat;background-size:3.5px 3.5px;}
+.letterBack{text-indent: 12px;}
+
+a.Link{color:#009c0d;display:inline-block;padding-left:3px;margin-bottom: 6px;cursor:pointer;}
+a.Link:hover, a.blueLink:active, a.blueLink:focus{text-decoration:underline; color:#009c0d}
+
+.tablewrap{overflow:hidden;margin: 20px 0 13px 0;}
+.tableLeft{float:left}
+.vsTable table.left1{width:29%; margin-right:1%}
+.vsTable table.left2{width:70%}
+
+/*.section ul span{font-size:14px;padding:0 13px;line-height: 24px; padding-bottom:10px; display: inline-block}*/
+.section ul.dotList li{padding: 0 0px 0 18px;background: url(../images/dot.png) 9px 10px no-repeat;background-size: 3px 3px;border-top:none;}
+.section ul.dotList{border-bottom:none;padding-top: 10px;}
+.section ul.dotList p{padding:0}
+.section ul.dotList li span.bold{font-weight:bold; padding:0; color:#555}
+
+p.title{font-weight:bold;padding: 12px 0 0px 7px;font-size:15px;}
+p.summaryDesc.explain{font-size:12px;padding-left:7px;margin-bottom: 7px;}
+
+.linkTable td dl + a{margin-top: 5px;font-size: 11px;padding: 0px 0px 0px 4px;}
+.linkTable td dl {}
+table.linkTable td:first-child {text-align: left;padding: 0 15px;}
+table td dt.title{display: inline-block;font-size: 12px;color: #3c6ecc;padding: 7px 0 3px 0;padding-left: 5px;background: url(../images/dot2.png) 0px 12px no-repeat;background-size: 2.5px 2.5px;}
+table td dd.text{line-height: 17px;overflow: hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp: 2; /* 라인수 */-webkit-box-orient: vertical;word-wrap:break-word;line-height: 1.2em;max-height: 2.4em;padding-left: 4px;}
+
+.chartWrap{overflow:hidden}
+.border_bottom{border-bottom: 1px solid #ddd;margin-bottom: 10px;}
+
+.analysisTable td:first-child{text-align:left; /*padding-left:10px*/}
+.analysisTable tr.textGray td, .sectorAnalysis tr.textGray td{color: #aaa;}
+.analysisTable tr.Line td, .sectorAnalysis tr.Line td{border-bottom: 1px solid #999;}
+
+.grayTable thead th:first-child, .grayTable thead th:first-child + th{background-color:#ddd}
+.grayTable thead tr:first-child th.rLine{border-right:1px solid #bbb}
+.grayTable tbody tr td.rLine{border-right:1px solid #ddd}
+.vsTable .grayTable thead tr th{border-bottom:1px solid #999}
+
+.mainSection{padding-top:20px}
+.title + div.vsTable{margin-top:5px}
+
+.mainCover {background-size: cover;background-color: #000;position: relative;padding: 0 0 100px 0;min-height: 520px;}
+.mainCover .days {color: #fff;position: absolute;left: 30px;top: 30px;border: 1px solid #fff;padding: 11px 10px;line-height: initial;text-align: center;font-weight: bold;min-width: 80px;min-height: 80px;background-color: rgba(0,0,0,0.5);}
+.mainCover .days b {font-size: 50px;font-weight: normal;}
+.mainCover .regionName {color: #fff;position: absolute;right: 0;top: 30px;background-color: rgba(0,0,0,0.5);padding: 15px 25px;font-size: 18px;font-weight: bold;text-align: center;}
+.mainCover .titleArea {position: absolute;top: 0;left: 0;}
+.mainCover .titleArea .hashTag {color: #fff;font-size: 14px;line-height: initial;padding: 10px 0 0 112px;}
+.mainCover .titleArea .hashTag span {padding: 0 10px 0 0;}
+.mainCover .titleArea h1 {color: #fff;font-size: 40px;font-weight: bold;padding: 140px 0 10px 110px;width: 698px;}
+.mainCover .backOpacity {display: block;position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.2);z-index: 0;}
+
+
+.tripSummary {margin: 0 0 40px 0; position: relative;}
+.tripSummary p {font-size: 14px;line-height: 24px;padding: 0 0 25px 0;}
+.tripSummary ul {border: 0;margin: 0;display: table;width: 100%;}
+.tripSummary ul  li {font-size: 12px;line-height: 18px;display: table-cell;border: 0;padding: 0;vertical-align: middle;}
+.tripSummary ul  li  dl {display: table;}
+
+.tripSummary ul  li dt.popularity {background: url(../images/heartIcon.svg) center center no-repeat;background-color: #f4681e;border-radius: 130px;width: 40px;height: 40px;background-size: 67%;}
+.tripSummary ul  li dt.matching {background: url(../images/likeIcon.svg) center 6px no-repeat;background-color: #f4681e;border-radius: 130px;width: 40px;height: 40px;background-size: 65%;}
+.tripSummary ul  li dt.temperature {background: url(../images/tempIcon.svg) center 2px no-repeat;background-color: #f4681e;border-radius: 130px;width: 40px;height: 40px;background-size: 50%;}
+.tripSummary ul  li dt.distance {background: url(../images/locationIcon.svg) center 6px no-repeat;background-color: #f4681e;border-radius: 130px;width: 40px;height: 40px;background-size: 69%;}
+
+
+.tripSummary ul  li  dt {display: table-cell;font-weight: bold;padding: 0 10px 0 0;font-size: 14px;padding: 0 0 0 10px;vertical-align: middle;}
+.tripSummary ul  li  dd {display: table-cell;color: #888;padding: 0 0 0 9px;vertical-align: middle;font-size: 14px;}
+.tripSummary ul  li  dd span {color: #aaa;padding: 0 6px 0 3px;}
+.tripSummary ul  li  dd b {color: #f1672e;}
+
+.courseSummary {position: relative;}
+.courseSummary h3 {   }
+.courseSummary ul {display: table;border: 0;width: 100%;margin: 14px 0 22px 0;}
+.courseSummary ul li {display: table-cell;border: 0;font-size: 12px;line-height: 19px;px;padding: 0;margin: 0;text-align: center;vertical-align: top;/* min-width: 38px; *//* max-width: 56px; */}
+.courseSummary ul li {background: url(../images/line.png) center 34px no-repeat;}
+.courseSummary ul li:nth-child(2n) {background: url(../images/lineArrow.png) center 34px no-repeat; }
+.courseSummary ul li:first-child { background: url(../images/lineFirst.png) center 34px no-repeat; }
+.courseSummary ul li:last-child { background: url(../images/lineLast.png) center 34px no-repeat; }
+.courseSummary ul li div {display: block;}
+.courseSummary ul li div span {display: block;text-align: center;}
+.courseSummary ul li div span.num {display: block;border-radius: 100px;padding: 7px 0;background-color: #f4681e;color: #fff;font-size: 16px;font-weight: bold;width: 34px;height: 34px;margin: 34px auto 0 auto;overflow: hidden;line-height: initial;font-family: "Century Gothic";}
+.courseSummary ul li div span.name {white-space: normal;font-size: 13px;width: 75px;margin: 4px auto 0 auto;line-height: 16px;display: block;font-weight: bold;color: #333;}
+.courseSummary ul li div span.vehicle {line-height: initial;font-size: 11px;color: #777;margin: 0 auto;}
+.courseSummary ul li div span.vehicle.car {background:url(../images/carIcon.svg) center center no-repeat;background-size: contain;width: 27px;height: 0;padding: 10px 0 0 0;overflow: hidden;margin: 2px auto 5px auto;}
+.courseSummary ul li div span.vehicle.ship {background:url(../images/shipIcon.svg) center center no-repeat;background-size: contain;width: 31px;height: 0;padding: 10px 0 0 0;overflow: hidden;margin: 2px auto 5px auto;}
+.courseSummary ul li div span.vehicle.walk {background:url(../images/walkIcon.svg) center center no-repeat;background-size: contain;width: 12px;height: 0;padding: 20px 0 0 0;overflow: hidden;margin: -5px auto 2px auto;}
+.courseSummary ul li div span.distance {line-height: initial;font-size: 11px;margin: 0 0 2px 0;color: #777;}
+.courseSummary ul li div span.time {line-height: initial;font-size: 11px;color: #777;}
+.courseSummary .tripMapArea {display:block;width: 100%;height: 500px;}
+.courseSummary .tripMapArea .courseMap {display:block;width: 65%;height: 100%;float:left;border: 1px solid #aaa;}
+.courseSummary .tripMapArea .locationMap {background: url(../images/map.png) -16px 54px no-repeat;display:block;width: 35%;height: 100%;float:right;background-color: #f9f9f9;border: 1px solid #aaa;border-left: none;position: relative;background-size: 105%;}
+.courseSummary .tripMapArea .locationMap .position {background: url(../images/positionIcon.svg) center center no-repeat;display:block;width: 24px;height: 36px;background-size: contain;position: absolute;}
+.courseSummary .tripMapArea .locationMap h4 {font-size: 14px;font-weight: bold;padding:  10px;margin: 0;width: 100%;text-align: center;display: block;background-color: #f0f0f0;}
+
+.position.대구북구 { left: 176px; top: 251px; }
+.position.대전대덕구 { left: 112px; top: 216px; }
+.position.서울관악구 { left: 84px; top: 138px; }
+.position.장성 { left: 73px; top: 294px; }
+.position.경상북도 { left: 173px; top: 204px; }
+.position.상주 { left: 148px; top: 213px; }
+.position.경주 { left: 215px; top: 256px; }
+.position.광주서구 { left: 79px; top: 309px; }
+.position.양주 { left: 88px; top: 113px; }
+.position.임실 { left: 102px; top: 274px; }
+.position.전라북도 { left: 93px; top: 259px; }
+.position.인천연수구 { left: 67px; top: 144px; }
+.position.영광 { left: 48px; top: 298px; }
+.position.안성 { left: 105px; top: 171px; }
+.position.장수 { left: 117px; top: 271px; }
+.position.울산 { left: 219px; top: 280px; }
+.position.서울성북구 { left: 88px; top: 128px; }
+.position.음성 { left: 122px; top: 173px; }
+.position.하남 { left: 99px; top: 134px; }
+.position.괴산 { left: 135px; top: 189px; }
+.position.서울용산구 { left: 86px; top: 134px; }
+.position.충청북도 { left: 115px; top: 199px; }
+.position.광주남구 { left: 78px; top: 312px; }
+.position.군위 { left: 181px; top: 234px; }
+.position.정선 { left: 187px; top: 145px; }
+.position.보성 { left: 98px; top: 335px; }
+.position.울릉 { left: 230px; top: 80px; }
+.position.수원 { left: 89px; top: 153px; }
+.position.울주군 { left: 211px; top: 281px; }
+.position.김해 { left: 193px; top: 299px; }
+.position.김제 { left: 79px; top: 261px; }
+.position.장흥 { left: 82px; top: 345px; }
+.position.영암 { left: 65px; top: 334px; }
+.position.전라남도 { left: 57px; top: 320px; }
+.position.영덕 { left: 218px; top: 211px; }
+.position.파주 { left: 78px; top: 110px; }
+.position.광명 { left: 79px; top: 140px; }
+.position.의왕 { left: 86px; top: 146px; }
+.position.곡성 { left: 101px; top: 304px; }
+.position.하동 { left: 130px; top: 310px; }
+.position.포천 { left: 102px; top: 102px; }
+.position.연천 { left: 86px; top: 91px; }
+.position.군산 { left: 66px; top: 250px; }
+.position.서울영등포구 { left: 82px; top: 134px; }
+.position.부산 { left: 213px; top: 306px; }
+.position.해남 { left: 60px; top: 356px; }
+.position.의령 { left: 159px; top: 291px; }
+.position.인천부평구 { left: 71px; top: 136px; }
+.position.함안 { left: 169px; top: 299px; }
+.position.강원도 { left: 153px; top: 112px; }
+.position.거창 { left: 137px; top: 267px; }
+.position.천안 { left: 93px; top: 186px; }
+.position.정읍 { left: 82px; top: 275px; }
+.position.부산남구 { left: 206px; top: 310px; }
+.position.고령 { left: 162px; top: 266px; }
+.position.경기도 { left: 87px; top: 152px; }
+.position.영월 { left: 173px; top: 157px; }
+.position.영주 { left: 177px; top: 181px; }
+.position.양산 { left: 204px; top: 290px; }
+.position.예천 { left: 169px; top: 198px; }
+.position.진안 { left: 112px; top: 259px; }
+.position.대전서구 { left: 106px; top: 226px; }
+.position.청도 { left: 189px; top: 267px; }
+.position.영천 { left: 197px; top: 245px; }
+.position.서울동대문구 { left: 90px; top: 130px; }
+.position.영동 { left: 134px; top: 234px; }
+.position.서울광진구 { left: 92px; top: 132px; }
+.position.인천 { left: 65px; top: 132px; }
+.position.부산금정구 { left: 208px; top: 305px; }
+.position.진도 { left: 35px; top: 361px; }
+.position.강릉 { left: 191px; top: 120px; }
+.position.전주 { left: 95px; top: 259px; }
+.position.삼척 { left: 219px; top: 154px; }
+.position.금산 { left: 114px; top: 237px; }
+.position.대구중구 { left: 178px; top: 256px; }
+.position.창녕 { left: 173px; top: 281px; }
+.position.부산동구 { left: 204px; top: 310px; }
+.position.계룡 { left: 101px; top: 225px; }
+.position.울산동구 { left: 225px; top: 281px; }
+.position.여주 { left: 120px; top: 151px; }
+.position.완도 { left: 65px; top: 369px; }
+.position.서울노원구 { left: 91px; top: 125px; }
+.position.인천계양구 { left: 72px; top: 132px; }
+.position.인천미추홀구 { left: 68px; top: 139px; }
+.position.인천남구 { left: 68px; top: 139px; }
+.position.원주 { left: 143px; top: 149px; }
+.position.경산 { left: 191px; top: 257px; }
+.position.무주 { left: 128px; top: 251px; }
+.position.광양 { left: 124px; top: 322px; }
+.position.부산강서구 { left: 194px; top: 311px; }
+.position.청송 { left: 204px; top: 218px; }
+.position.기장군 { left: 213px; top: 298px; }
+.position.목포 { left: 51px; top: 334px; }
+.position.경남고성 { left: 161px; top: 321px; }
+.position.무안 { left: 53px; top: 322px; }
+.position.광주광역시 { left: 73px; top: 308px; }
+.position.달성군 { left: 174px; top: 262px; }
+.position.서울강동구 { left: 95px; top: 132px; }
+.position.합천 { left: 153px; top: 275px; }
+.position.대전중구 { left: 110px; top: 226px; }
+.position.진천 { left: 112px; top: 181px; }
+.position.서울종로구 { left: 86px; top: 129px; }
+.position.서울동작구 { left: 84px; top: 136px; }
+.position.대전 { left: 107px; top: 222px; }
+.position.서울은평구 { left: 82px; top: 127px; }
+.position.문경 { left: 151px; top: 195px; }
+.position.부산해운대구 { left: 210px; top: 305px; }
+.position.부산서구 { left: 202px; top: 312px; }
+.position.동두천 { left: 91px; top: 105px; }
+.position.산청 { left: 138px; top: 290px; }
+.position.사천 { left: 148px; top: 320px; }
+.position.홍천 { left: 147px; top: 118px; }
+.position.경상남도 { left: 183px; top: 302px; }
+.position.남원 { left: 111px; top: 288px; }
+.position.화천 { left: 125px; top: 89px; }
+.position.김천 { left: 149px; top: 243px; }
+.position.대전유성구 { left: 106px; top: 218px; }
+.position.의정부 { left: 91px; top: 119px; }
+.position.부산중구 { left: 203px; top: 312px; }
+.position.부천 { left: 74px; top: 136px; }
+.position.대구수성구 { left: 182px; top: 258px; }
+.position.증평 { left: 121px; top: 189px; }
+.position.부산수영구 { left: 207px; top: 308px; }
+.position.오산 { left: 90px; top: 161px; }
+.position.서울금천구 { left: 81px; top: 139px; }
+.position.함양 { left: 129px; top: 279px; }
+.position.창원 { left: 183px; top: 303px; }
+.position.담양 { left: 86px; top: 298px; }
+.position.구미 { left: 164px; top: 230px; }
+.position.당진 { left: 66px; top: 179px; }
+.position.옹진군 { left: 6px; top: 136px; }
+.position.봉화 { left: 196px; top: 178px; }
+.position.울진 { left: 225px; top: 180px; }
+.position.순천 { left: 109px; top: 319px; }
+.position.보은 { left: 127px; top: 210px; }
+.position.대구 { left: 180px; top: 258px; }
+.position.태백 { left: 200px; top: 158px; }
+.position.홍성 { left: 64px; top: 204px; }
+.position.서산 { left: 58px; top: 186px; }
+.position.완주 { left: 98px; top: 255px; }
+.position.횡성 { left: 146px; top: 137px; }
+.position.충청남도 { left: 68px; top: 198px; }
+.position.인천동구 { left: 66px; top: 137px; }
+.position.서울구로구 { left: 79px; top: 136px; }
+.position.울산남구 { left: 219px; top: 282px; }
+.position.옥천 { left: 126px; top: 223px; }
+.position.밀양 { left: 189px; top: 283px; }
+.position.부산북구 { left: 202px; top: 302px; }
+.position.부여 { left: 80px; top: 229px; }
+.position.남해 { left: 142px; top: 336px; }
+.position.신안 { left: 29px; top: 330px; }
+.position.철원 { left: 114px; top: 83px; }
+.position.청양 { left: 78px; top: 213px; }
+.position.울산중구 { left: 218px; top: 277px; }
+.position.포항 { left: 221px; top: 245px; }
+.position.부안 { left: 57px; top: 269px; }
+.position.김포 { left: 67px; top: 122px; }
+.position.인천남동구 { left: 71px; top: 141px; }
+.position.서울서대문구 { left: 83px; top: 130px; }
+.position.용인 { left: 97px; top: 155px; }
+.position.서천 { left: 68px; top: 239px; }
+.position.대구달서구 { left: 174px; top: 259px; }
+.position.고창 { left: 64px; top: 287px; }
+.position.논산 { left: 94px; top: 231px; }
+.position.의성 { left: 178px; top: 219px; }
+.position.서울성동구 { left: 89px; top: 132px; }
+.position.구리 { left: 95px; top: 128px; }
+.position.경기광주 { left: 103px; top: 143px; }
+.position.서울중랑구 { left: 92px; top: 129px; }
+.position.강진 { left: 72px; top: 347px; }
+.position.인제 { left: 158px; top: 92px; }
+.position.세종 { left: 98px; top: 203px; }
+.position.속초 { left: 173px; top: 86px; }
+.position.순창 { left: 92px; top: 288px; }
+.position.제주시 { left: 28px; top: 412px; }
+.position.대구서구 { left: 175px; top: 255px; }
+.position.평택 { left: 85px; top: 171px; }
+.position.성주 { left: 157px; top: 252px; }
+.position.서울서초구 { left: 89px; top: 138px; }
+.position.안양 { left: 84px; top: 144px; }
+.position.양구 { left: 145px; top: 87px; }
+.position.이천 { left: 114px; top: 158px; }
+.position.서울강남구 { left: 91px; top: 136px; }
+.position.고양 { left: 77px; top: 124px; }
+.position.광주동구 { left: 84px; top: 311px; }
+.position.서울중구 { left: 87px; top: 132px; }
+.position.과천 { left: 87px; top: 141px; }
+.position.울산북구 { left: 222px; top: 275px; }
+.position.양양 { left: 179px; top: 98px; }
+.position.충주 { left: 138px; top: 172px; }
+.position.화순 { left: 88px; top: 318px; }
+.position.성남 { left: 95px; top: 140px; }
+.position.광주광산구 { left: 73px; top: 307px; }
+.position.칠곡 { left: 170px; top: 245px; }
+.position.함평 { left: 54px; top: 312px; }
+.position.서울강북구 { left: 88px; top: 125px; }
+.position.부산연제구 { left: 206px; top: 306px; }
+.position.군포 { left: 82px; top: 147px; }
+.position.익산 { left: 87px; top: 244px; }
+.position.서울양천구 { left: 79px; top: 134px; }
+.position.구례 { left: 115px; top: 302px; }
+.position.고흥 { left: 105px; top: 351px; }
+.position.청주 { left: 115px; top: 199px; }
+.position.서울강서구 { left: 77px; top: 131px; }
+.position.인천서구 { left: 66px; top: 132px; }
+.position.서울송파구 { left: 93px; top: 136px; }
+.position.태안 { left: 38px; top: 196px; }
+.position.춘천 { left: 131px; top: 108px; }
+.position.아산 { left: 85px; top: 188px; }
+.position.공주 { left: 87px; top: 211px; }
+.position.진주 { left: 151px; top: 305px; }
+.position.서울도봉구 { left: 89px; top: 124px; }
+.position.서울마포구 { left: 82px; top: 131px; }
+.position.제주도 { left: 28px; top: 420px; }
+.position.부산사하구 { left: 199px; top: 318px; }
+.position.부산영도구 { left: 205px; top: 314px; }
+.position.예산 { left: 74px; top: 197px; }
+.position.가평 { left: 112px; top: 113px; }
+.position.남양주 { left: 100px; top: 125px; }
+.position.부산진구 { left: 204px; top: 309px; }
+.position.영양 { left: 209px; top: 196px; }
+.position.부산사상구 { left: 200px; top: 308px; }
+.position.대구남구 { left: 177px; top: 258px; }
+.position.여수 { left: 124px; top: 339px; }
+.position.안산 { left: 77px; top: 149px; }
+.position.광주북구 { left: 83px; top: 305px; }
+.position.보령 { left: 54px; top: 220px; }
+.position.부산동래구 { left: 206px; top: 306px; }
+.position.안동 { left: 185px; top: 205px; }
+.position.강화군 { left: 44px; top: 121px; }
+.position.대구동구 { left: 183px; top: 251px; }
+.position.대전동구 { left: 109px; top: 220px; }
+.position.양평 { left: 120px; top: 135px; }
+.position.서울 { left: 82px; top: 131px; }
+.position.거제 { left: 183px; top: 332px; }
+.position.평창 { left: 173px; top: 133px; }
+.position.화성 { left: 78px; top: 161px; }
+.position.시흥 { left: 75px; top: 144px; }
+.position.통영 { left: 168px; top: 328px; }
+.position.인천중구 { left: 58px; top: 140px; }
+.position.제천 { left: 151px; top: 170px; }
+.position.강원고성 { left: 168px; top: 70px; }
+.position.동해 { left: 207px; top: 135px; }
+.position.단양 { left: 169px; top: 174px; }
+.position.나주 { left: 70px; top: 320px; }
+.position.서귀포 { left: 28px; top: 426px; }
+
+.locationDesc {display: block;width: 100%;overflow: hidden;}
+.locationDesc p {font-size: 14px;line-height: 24px;padding: 5px 0 15px 0;text-align: justify;width: 100%;display: block;float:  left;/* height: 153px; *//* overflow: hidden; */margin: 0 0 10px 0;}
+.locationDesc .keywordMap {width: 495px;position: relative;display: block;float: left;min-height: 206px;/* overflow: hidden; */margin: 0 0 20px 0;}
+.locationDesc .keywordMap .titleArea {display: table-cell;border: 0;margin: 0;position: relative;width: 146px;vertical-align: middle;}
+.locationDesc .keywordMap .titleArea h4 {font-size: 12px;font-weight: bold;background-color: rgba(0,0,0,0.5);border-radius: 300px;text-align: center;color: #fff;width: 80px;height: 80px;padding: 34px 0 0 0;display: block;line-height: initial;}
+.locationDesc .keywordMap .titleArea h4.popularTitle {margin: -22px 0 0 0;background-color: rgba(233,101,101,0.6);}
+.locationDesc .keywordMap .titleArea h4.moodTitle {margin: 0 auto;background-color: rgba(82,180,191,0.6);}
+.locationDesc .keywordMap .titleArea h4.themeTitle {margin: -80px 0 0 66px;background-color: rgba(236,142,0,0.6);}
+.locationDesc .keywordMap ul { display: block; }
+.locationDesc .keywordMap ul li {font-size: initial;line-height: normal;border: 0;padding: 0;}
+.locationDesc .keywordMap ul.popularKeyword {text-align: center;margin: 0 auto;border: 0;width: 70%;display: block;}
+.locationDesc .keywordMap ul.popularKeyword li {font-size: 11px;line-height: initial;padding: 7px 10px;border: 2px solid #91d1d8;border-radius: 7px;margin: 0 3px 5px 0;display: inline-block;}
+.locationDesc .keywordMap ul.moodKeyword { border: 0;text-align: left;margin: 0;display: table-cell;vertical-align: bottom;padding: 0 10px 0 0;}
+.locationDesc .keywordMap ul.moodKeyword li {font-size: 11px;line-height: initial;padding: 7px 10px;border: 2px solid #e89696;border-radius: 7px;display: inline-flex;margin: 0 3px 5px 0;}
+.locationDesc .keywordMap ul.themeKeyword {text-align: right;border: 0;margin: 0;display: table-cell;vertical-align: bottom;padding: 0 0 0 10px;}
+.locationDesc .keywordMap ul.themeKeyword li {font-size: 11px;line-height: initial;padding: 7px 10px;border: 2px solid #f9b955;border-radius: 7px;display: inline-flex;margin: 0 3px 5px 0;}
+.locationDesc .locationMap  {width: 495px;height: 408px;border: 1px solid #aaa;display: block;float: left;}
+.locationDesc .locationInfoLayout {/* display: none; */}
+.locationDesc .locationInfoLayout ul  {border: 0;width: 252px;margin: 0;display: block;overflow: hidden;float: right;}
+.locationDesc .locationInfoLayout ul  li {border: 0;line-height: initial;padding: 0; }
+.locationDesc .locationInfoLayout ul  li span {display: block;height: 155px;width: 252px;float: right;margin: 0 0 5px 0;border: 1px solid #aaa;background: url(../images/noImage.svg) #e6e6e6 center center no-repeat;background-size: cover;text-align: center;overflow: hidden;}
+.locationDesc .locationInfoLayout ul  li span img {height: 155px;min-width: 252px;margin: 0 auto;}
+
+.locationDesc ul.noCategory {text-align: center;margin: 0 auto;border: 0;width: 80%;display: block;}
+.locationDesc ul.noCategory li {font-size: 12px;line-height: initial;padding: 7px 10px;border: 2px solid #aebabb;border-radius: 7px;margin: 0 3px 5px 0;display: inline-block;}
+
+
+.courseDescription { display: block;  margin: 0 0 10px 0; overflow: hidden; }
+.courseDescription h2 {margin: 20px 0 10px 0; display:  block;overflow:  hidden;}
+.courseDescription h2 .num {display: block;border-radius: 100px;padding: 7px 0;background-color: #f4681e;color: #fff;font-size: 16px;font-weight: bold;width: 34px;height: 34px;margin: -2px 8px 0 0;overflow: hidden;line-height: initial;text-align: center;float: left;font-family: "Century Gothic";}
+.courseDescription h2 .name {font-size: 30px;font-weight: bold;display: block;float: left;}
+.courseDescription h2 .desc {font-size: 16px;color: #666;margin: 11px 0 0 15px;float: left;}
+.courseDescription h2 .category {display: block;float: right;font-size: 12px;margin: 20px 0 0 0;color: #666;letter-spacing:  1px;}
+
+.courseDescription .review {display: block;border-top: 1px solid #aaa;/* border-bottom: 1px solid #aaa; */margin: 10px 0 0 0;}
+.courseDescription .review ul {border: 0;display: block;margin: 0;}
+.courseDescription .review li {border: 0;font-size: 14px;line-height: initial;border-bottom: 1px solid #ccc;padding: 5px 0 5px 0;}
+.courseDescription .review li dl {background: url(../images/talkIcon.svg) 0px 1px no-repeat;background-size: 28px;padding: 0 0 0 38px;margin: 0;}
+.courseDescription .review li dt {display: block;margin: 0 0 5px 0;font-weight: bold;font-size: 14px;padding: 4px 0 0 0;}
+.courseDescription .review li dd {display: block;font-size: 12px;line-height: 19px;}
+
+
+.hotPlace {display: block;overflow: hidden;}
+.hotPlace h3 {font-size: 18px;font-weight: bold;border-bottom: 1px solid #000;padding: 0 0 8px 0;margin: 10px 0 10px 0;display: block;line-height: initial;}
+.hotPlace ol {   }
+.hotPlace ol li {position: relative;display: block;clear: both;margin: 0 0 9px 0;overflow: hidden;}
+.hotPlace ol li figure {display: block;width: 180px;height: 116px;padding: 0;margin: 0 10px 0 0;float: left;background: url(../images/noImage.svg) #e6e6e6 center center no-repeat;background-size: cover;overflow: hidden;text-align: center;border: 1px solid #aaa;}
+.hotPlace ol li figure img {height: 116px;min-width: 180px;background-color: #e6e6e6;margin: 0 auto;}
+.hotPlace ol li .num {display: block;width: 20px;height: 20px;text-align: center;background-color: rgba(0,0,0,0.7);color: #ffffff;padding: 2px 0 0 0;position: absolute;left: 0;top: 0;font-family: "Century Gothic";font-weight: bold;}
+.hotPlace ol li h4 {display: block;float: left;font-size: 15px;font-weight: bold;margin: 2px 0 0 0;padding: 0;width: 180px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;color: #000;}
+
+.hotPlace ol li p {display: block;float: left;width: 180px;text-align: left;font-size: 12px;line-height: 17px;padding: 0;margin: 4px 0 0 0;max-height: 51px;overflow: hidden;}
+.hotPlace ol li .hashTag {display: block;border: 0;padding: 0;width: 178px;float: left;margin: 0; max-height: 57px; overflow: hidden;}
+.hotPlace ol li .hashTag li {font-size: 11px;line-height: initial;border: 0;float: left;display: block;padding: 4px 8px;margin: 3px 3px 0 0;background-color: #ccc;border-radius: 100px;clear: none;}
+.hotPlace ol li .Information {border: 0;width: 180px;float: left;display: block;}
+.hotPlace ol li .Information li {font-size: 11px;border: 0;clear: none;padding: 0;line-height: 14px;color: #777;margin: 2px 0 0 0;}
+
+.hotPlace .location {display: block;width: 370px;float: left;}
+.hotPlace .locationIcon {background: url(../images/hotplaceIcon.svg) center 5px no-repeat;display: block;width: 30px;height: 30px;float: left;background-color: #f4681e;border-radius: 100px;margin: -6px 9px 0 0;background-size: 14px;}
+.hotPlace .shoppingMall {display: block;float: left;width: 370px;clear: left;margin: 0 0 0 0;}
+.hotPlace .shoppingMallIcon {background: url(../images/shoppingIcon.svg) 6px 8px no-repeat;display: block;width: 30px;height: 30px;float: left;background-color: #f4681e;border-radius: 100px;margin: -6px 9px 0 0;background-size: 18px;}
+.hotPlace .gourmetFood {display: block;float: right;width: 370px;}
+.hotPlace .gourmetFoodIcon {background: url(../images/gourmetFoodIcon.svg) center 6px no-repeat;display: block;width: 30px;height: 30px;float: left;background-color: #f4681e;border-radius: 100px;margin: -6px 9px 0 0;background-size: 20px;}
+.hotPlace .festivalInformation {display: block;clear: right;float: right;width: 370px;margin: 15px 0 0 0;}
+.hotPlace .festivalInformationIcon {background: url(../images/festivalIcon.svg) center 6px no-repeat;display: block;width: 30px;height: 30px;float: left;background-color: #f4681e;border-radius: 100px;margin: -6px 9px 0 0;background-size: 17px;}
+
+/*맛집*/
+.hotPlace .gourmetFood .Information {height: 44px;display: -webkit-box;overflow: hidden;text-overflow: ellipsis;white-space: normal;text-align: left;word-wrap: break-word;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.hotPlace .gourmetFood ol li h4 + p {max-height: 35px;}
+
+/*명소 설명 테스트*/
+.hotPlace .location ol li h4 + p {max-height: 33px;}
+
+/*쇼핑 설명 테스트*/
+.hotPlace .shoppingMall ol li h4 + p {max-height: 33px;line-height: 1.3;}
+
+
+.section .picArea h3 {text-align: center;border: 0;font-size: 16px;font-weight: bold;margin: 0 0 10px 0;display: block;line-height: initial;padding: 10px 0;}
+.section .picArea figure {display: block;width: 100%;height: 298px;margin: 0;padding: 0;}
+
+.newsArea {border: 1px solid #aaa;padding: 20px;display: block;}
+.newsArea .newsItem {display: block;padding: 0 0 10px 0;border-bottom: 1px dotted #aaa;margin: 0px 0 20px 0;}
+.newsArea .newsItem h4 {font-size: 14px;font-weight: bold;margin: 0 0 10px 0;padding: 0;display: block;float: left;}
+.newsArea .newsItem .source {display: block;float: right;margin: 0 0 8px 0;font-size: 11px;}
+.newsArea .newsItem p {display: block;clear: both;font-size: 14px;line-height: 22px;padding: 0 0 5px 0;}
+.newsArea .newsItem a {text-align: right;font-size: 11px;font-style: italic;display: block;margin: 5px 0 0 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.newsArea .newsItem:last-child {border:0;margin: 0;padding: 0;}
+
+.policy {border: 1px solid #aaa;padding: 20px;display: block;}
+.policy h3 {font-size: 18px;font-weight: bold;margin: 0 0 20px 0;padding: 0 0 10px 0;display: block;line-height: initial;border-bottom: 1px solid #000;overflow: hidden;}
+.policy .policyItem {display: block;padding: 0 0 10px 0;border-bottom: 1px dotted #aaa;margin: 0px 0 20px 0;}
+.policy .policyItem h4 {font-size: 14px;font-weight: bold;margin: 0 0 10px 0;padding: 0;display: block;float: left;}
+.policy .policyItem .source {display: block;float: right;margin: 0 0 8px 0;font-size: 11px;}
+.policy .policyItem .date {display: block;float: right;margin: 0 0 8px 0;font-size: 11px;}
+.policy .policyItem p {display: block;clear: both;font-size: 14px;line-height: 22px;padding: 0 0 5px 0;}
+.policy .policyItem a {text-align: right;font-size: 11px;font-style: italic;display: block;margin: 5px 0 0 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.policy .policyItem:last-child {border:0;margin: 0;padding: 0;}
+
+
+.durationDescArea {display: block;margin: 0 0 30px 0;}
+.durationDescArea h3 {font-size: 18px;font-weight: bold;border-bottom: 1px solid #000;margin: 20px 0 0 0;padding: 0 0 6px 0;display: block;line-height: initial;}
+.durationDescArea .durationDesc {display: table;border-bottom: 1px dotted #aaa;width: 100%;}
+.durationDescArea .durationDesc dt {display: table-cell;min-width: 150px;padding: 15px 20px 0 0;vertical-align: top;}
+.durationDescArea .durationDesc dt .num {border-radius: 100px;background-color: #FDD400;width: 25px;height: 25px;display: block;text-align: center;color: #000;margin: 0 auto;padding: 7px 0 0 0;}
+.durationDescArea .durationDesc dt .count {display: block;font-size: 11px;margin: 6px 0 10px 0;text-align: center;white-space: nowrap;}
+.durationDescArea .durationDesc dt .keyword {display: block;border: 0;margin: 10px 0;}
+.durationDescArea .durationDesc dt .keyword li {display: block;font-size: 12px;line-height: initial;border: 0;background-color: #eee;border-radius: 100px;margin: 0 0 3px 0;padding: 5px 7px;text-align: center;}
+.durationDescArea .durationDesc dt .keyword li:last-child {   }
+
+.durationDescArea .durationDesc dd {display: table-cell;vertical-align: middle;width: 617px;}
+.durationDescArea .durationDesc dd h4 {font-size: 16px;font-weight: bold;margin: 10px 0 0 0;display: block;float: left;padding: 0;}
+.durationDescArea .durationDesc dd .source {display: block;float: right;font-size: 11px;margin: 14px 0 0 0;}
+.durationDescArea .durationDesc dd p {display: block;clear: both;font-size: 14px;padding: 6px 0 0 0;text-align: justify;line-height: 22px;}
+.durationDescArea .durationDesc dd .relationNews {border: 0;margin: 0;}
+.durationDescArea .durationDesc dd .relationNews li {font-size: 12px;line-height: initial;border: 0;font-weight: bold;display: block;margin: 8px 0;padding: 0 0 0 10px;}
+.durationDescArea .durationDesc dd .relationNews li:before {content:'┗';padding: 0 7px 0 0;color: #888;}
+.durationDescArea .durationDesc dd .relationNews li:last-child {  }
+
+
+/* by leeho */
+.ThreeTypes {width: 100%; position: relative; display: block; min-height: 206px; padding: 20px 20px;}
+.ThreeTypes .titleArea {display: table-cell;border: 0;margin: 0;position: relative;width: 146px;vertical-align: middle;}
+.ThreeTypes .titleArea h4 {font-size: 16px;font-weight: bold;background-color: rgba(0,0,0,0.5);border-radius: 300px;text-align: center;color: #fff;width: 120px;height: 120px;display: block;line-height: initial;}
+.ThreeTypes .titleArea h4.t1Title {margin: 0 auto;background-color: rgba(90,109,224,0.7);}
+.ThreeTypes .titleArea h4.t2Title {margin: -43px 0 0 0px;background-color: rgba(73,198,221,0.7);}
+.ThreeTypes .titleArea h4.t3Title {margin: -120px 0 0 97px;background-color: rgba(242,76,98,0.7);}
+.ThreeTypes ul { display: block; }
+.ThreeTypes ul li {font-size: initial;line-height: normal;border: 0;padding: 0;}
+.ThreeTypes ul.t1Keyword {text-align: center;margin: 0 auto;border: 0;width: 70%;display: block;}
+.ThreeTypes ul.t1Keyword li {font-size: 14px;line-height: initial;padding: 7px 10px;border: 2px solid rgba(90,109,224,0.6);border-radius: 7px;margin: 0 3px 5px 0;display: inline-block;}
+.ThreeTypes ul.t2Keyword { border: 0;text-align: right;margin: 0;display: table-cell;vertical-align: bottom;padding: 0 10px 0 0; width: 244px;}
+.ThreeTypes ul.t2Keyword li {font-size: 14px;line-height: initial;padding: 7px 10px;border: 2px solid rgba(73,198,221,0.6);border-radius: 7px;display: inline-flex;margin: 0 3px 5px 0;}
+.ThreeTypes ul.t3Keyword {text-align: left;border: 0;margin: 0;display: table-cell;vertical-align: bottom;padding: 0 0 0 10px;}
+.ThreeTypes ul.t3Keyword li {font-size: 14px;line-height: initial;padding: 7px 10px;border: 2px solid rgba(242,76,98,0.6);border-radius: 7px;display: inline-flex;margin: 0 3px 5px 0;}
+
+/* by leeho */
+.bumpchart .axis text {fill: #777; stroke: none; font-size: 11px;}
+.bumpchart .axis line {stroke: #aaa; fill: none;}
+.bumpchart .axis path {stroke: #777; fill: none;}
+.bumpchart .item path.rank {stroke-width: 1px; stroke-opacity: 0.8; fill: none;}
+.bumpchart .item.important path.rank {stroke-width: 3px; stroke-opacity: 1;}
+.bumpchart .item.focus path.rank {stroke-width: 5px; stroke-opacity: 1;}
+.bumpchart .item text {alignment-baseline: middle; stroke-width: 0.2; font-size: 12px;}
+.bumpchart .item text.left {text-anchor: end;}
+.bumpchart .item text.right {text-anchor: start;}
+.bumpchart .item.important text {stroke-width: 0.5; font-size: 12px;}
+.bumpchart .item.focus text {stroke-width: 0.5; font-size: 14px;}
+
+/* by leeho */
+.section table em {font-weight: bold;color: #ff7600;padding: 0 2px;font-weight: bold;}
+
+.chartArea .legend:not(.leaflet-control) {border: 0;margin: 0;position: absolute;top: 50px;right: 14px;}
+.chartArea .legend:not(.leaflet-control) li {font-size: 14px;line-height: initial;border: 0;padding: 5px 7px;}
+.chartArea .legend .twitter {  }
+.chartArea .legend .news {  }
+.chartArea .legend .blog {  }
+
+.chartArea .legend .twitter:before { content:'●'; color:#67B7DC; padding:0 10px 0 0;  }
+.chartArea .legend .news:before {content:'●'; color:#FDD400; padding:0 10px 0 0; }
+.chartArea .legend .blog:before { content:'●';color:#84B761; padding:0 10px 0 0;}
+
+.chartArea table.dust {float: right;width: 290px;border-spacing: 1px;border-collapse: initial;margin: 12px 0 0 0;}
+.chartArea table.dust .tb1 {   }
+.chartArea table.dust .tb2 {   }
+.chartArea table.dust .tb3 {   }
+.chartArea table.dust .tb4 {   }
+
+.chartArea table.dust  {   }
+.chartArea table.dust  tr {   }
+.chartArea table.dust  tr th {text-align: center;font-size: 12px;font-weight: bold;background-color: #eee;padding: 10px 0;border-bottom: 1px solid #bbb;}
+.chartArea table.dust  tr td {text-align: center;padding: 6px 0;border-bottom: 1px solid #ccc;}
+.chartArea table.dust  tr td span {   }
+.chartArea table.dust  tr td span.lv1 {  color:#32a1ff;  }
+.chartArea table.dust  tr td span.lv2 {  color:#00c73c;  }
+.chartArea table.dust  tr td span.lv3 {  color:#ffc323;  }
+.chartArea table.dust  tr td span.lv4 {  color:#ffc323;  }
+.chartArea table.dust  tr td span.lv5 {  color:#fd9b5a;  }
+.chartArea table.dust  tr td span.lv6 {  color:#ff5959;  }
+
+.chartArea .dustMap {position: relative;float: left;display: block;width: 440px;height: 512px;margin: 12px 0 0 0;background: url(../images/koreaMap.svg) #f9f9f9 center center no-repeat;background-size: 100%;}
+.chartArea .dustMap ul {border: 0;margin: 0;}
+.chartArea .dustMap ul li {font-size: 12px;line-height: initial;border: 0;position: absolute;display: block;border-radius: 100px;padding: 0;}
+
+.chartArea .dustMap ul li span.lv1 {  background-color:#32a1ff;  }
+.chartArea .dustMap ul li span.lv2 {  background-color:#00c73c;  }
+.chartArea .dustMap ul li span.lv3 {  background-color:#ffc323;  }
+.chartArea .dustMap ul li span.lv4 {  background-color:#ffc323;  }
+.chartArea .dustMap ul li span.lv5 {  background-color:#fd9b5a;  }
+.chartArea .dustMap ul li span.lv6 {  background-color:#ff5959;  }
+
+.chartArea .dustMap ul li.서울 {left: 145px;top: 62px;}
+.chartArea .dustMap ul li.경기 {left: 180px;top: 100px;}
+.chartArea .dustMap ul li.인천 {left: 97px;top: 80px;}
+.chartArea .dustMap ul li.강원 {left: 250px;top: 56px;}
+.chartArea .dustMap ul li.세종 {left: 165px;top: 160px;}
+.chartArea .dustMap ul li.충북 {left: 212px;top: 147px;}
+.chartArea .dustMap ul li.충남 {left: 116px;top: 190px;}
+.chartArea .dustMap ul li.대전 {left: 190px;top: 205px;}
+.chartArea .dustMap ul li.경북 {left: 300px;top: 170px;}
+.chartArea .dustMap ul li.경남 {left: 240px;top: 303px;}
+.chartArea .dustMap ul li.대구 {left: 273px;top: 233px;}
+.chartArea .dustMap ul li.울산 {left: 340px;top: 270px;}
+.chartArea .dustMap ul li.부산 {left: 320px;top: 326px;}
+.chartArea .dustMap ul li.전북 {left: 154px;top: 261px;}
+.chartArea .dustMap ul li.전남 {left: 160px;top: 343px;}
+.chartArea .dustMap ul li.광주 {left: 108px;top: 308px;}
+.chartArea .dustMap ul li.제주 {left: 30px;top: 448px;}
+
+.chartArea .dustMap ul li .name {display: block;text-align: center;color: #000;margin: 0 0 3px 0;text-shadow: 1px 1px #ffffff;font-size: 12px;font-weight: bold;}
+.chartArea .dustMap ul li .value {display: block;text-align: center;border-radius: 100px;padding: 3px 10px;border: 1px solid #fff;font-weight: bold;color: #fff;}
+
+.mainSection{padding-top:20px}
+.title + div.vsTable{margin-top:5px}
+
+.pagedate{overflow:hidden}
+.pagedate p{margin:0 0 5px 0; padding:0; float:right}
+.pagedate p span{padding-right:3px}
+
+.logo{border-top:1px solid #d9d9d9;margin-top: 100px;overflow:hidden;}
+.logo img{width: 145px;float:right;padding:10px 10px 0 0;}
+
+.logo2{border-top:1px solid #d9d9d9; overflow:hidden; display:none}
+.logo2 img{width:110px; float:right; padding:10px 10px 0 0}
+
+.notice img{margin: 560px auto 0 auto;display:block;}
+.notice .notice_text ul.dotList{margin-top: 510px;line-height: 19px;font-size: 12px;color: #666;/* border-top: 1px solid #cacaca; */padding: 0 0 30px 0;text-indent: 11p;border-bottom: 1px solid #cacaca;}
+.notice .notice_text ul.infor_bottom {overflow:hidden;border:none;margin-top: 10px;padding-top:2px;}
+.notice .notice_text ul.infor_bottom li{float:left;border:none;border-left: 1px solid #767676;padding:0 20px;line-height: 13px;font-size: 13px;color: #666;}
+.notice .notice_text ul.infor_bottom li:first-child{border-left:none}
+.notice .notice_text ul.infor_bottom li.web{font-size: 14px;}
+
+/* 리스트 20개 노출 2020.11.06 */
+.hotPlace.layout-wide > div {float: none;width: 100%;}
+.hotPlace.layout-wide > div > ol {overflow: hidden;}
+.hotPlace.layout-wide > div > ol > li {clear: initial;float: left;width: 370px;}
+.hotPlace.layout-wide > div > ol > li:nth-child(even) {float: right;}
+
+/*성비율, 연령대, busy time*/
+.information-block2 {clear: both;overflow: hidden;padding-top: 10px;}
+.information-block2 .cell {float: left;width: 180px;}
+.information-block2 .cell:nth-child(even) {float: right;}
+.information-block2 .busy-time-block ul {border: none;margin: 0;}
+.information-block2 .busy-time-block li {padding: 0;margin: 0;border: none;line-height: 1;font-size: 13px;color: #000;margin-top: 5px;}
+.information-block2 .busy-time-block li.age-group {padding: 3px 0 3px 24px;background: url(../images/ico-person.svg) no-repeat 1px center;background-size: 13px auto;}
+.information-block2 .busy-time-block li.busy-time {padding: 3px 0 3px 25px;background: url(../images/ico-timer.svg) no-repeat 0 center;background-size: 15px auto;}
+.information-block2 .ico-person {display: inline-block;width: 14px;height: auto;vertical-align: middle;margin-right: 8px;}
+.information-block2 .ico-timer {display: inline-block;width: 15px;height: auto;vertical-align: middle;margin-right: 8px;}
+
+/*성비율*/
+.information-block2 .proportion-block > div {position: relative;display: inline-block;min-height: 52px;width: 75px;}
+.information-block2 .proportion-block .text {width: auto;padding: 0;margin: 0;font-size: 12px;margin-top: 10px;height: auto;}
+.information-block2 .proportion-block .text .count {margin-top: 5px;font-family: 'Helvetica';font-weight: bold;display: block;font-size: 15px;}
+.information-block2 .proportion-block .text .count em {font-size: 20px;}
+
+.information-block2 .proportion-male {margin-right: 10px;}
+
+.information-block2 .ico-percentage {position: absolute;bottom: 0;right: 0;}
+.information-block2 .ico-percentage .ico-mask {display: block;overflow: hidden;position: absolute;bottom: 0;left: 0;height: 0;width: 100%;}
+.information-block2 .ico-percentage .ico-mask img {position: absolute;bottom: 0;left: 0;}
+
+.information-block2 .proportion-male .count {color: #2db9c2;}
+.information-block2 .ico-percentage.ico-percentage-male {background: url(../images/ico-male-bg.png) no-repeat 0 center;width: 32px;height: 52px;}
+.information-block2 .ico-percentage.ico-percentage-male .ico-mask img {width: 32px;height: 52px;}
+
+.information-block2 .proportion-female .count {color: #ef4c3b;}
+.information-block2 .ico-percentage.ico-percentage-female {background: url(../images/ico-female-bg.png) no-repeat 0 center;width: 28px;height: 51px;}
+.information-block2 .ico-percentage.ico-percentage-female .ico-mask img {width: 28px;height: 51px;}
+
+
+/* 20201215 팝업 추가 */
+.popup-view-wrap{}
+.popup-view-wrap .view-title{}
+.popup-view-wrap .view-title span{line-height: 1.2; display: inline-block;}
+.popup-view-wrap .view-desc{}
+.popup-view-wrap .view-desc p{}
+.popup-view-wrap .view-tab-menu{border-bottom: 2px solid #000;margin: 0;font-size: 0; margin-bottom: 10px;}
+.popup-view-wrap .view-tab-menu li{display: inline-block;border: 0;padding: 0;}
+.popup-view-wrap .view-tab-menu li a{display: block;background-color: #EBEBEB;border-radius: 15px 15px 0px 0px;font-weight: bold;font-size: 18px;line-height: 43px;height: 43px;padding: 0 26px;}
+
+.popup-view-wrap .view-tab-menu li.active{}
+.popup-view-wrap .view-tab-menu li.active a{background-color: #000; color: #fff}
+
+@media print {
+	html,body {color:#000;}
+	.cover { /*page-break-after: always; */ }
+	/*.cover { height:1320px; margin:17mm 0 }*/
+	/*.cover { height:1095px; margin:17mm 0 }*/
+	.cover { height:1280px; margin:17mm 0 }
+	.cover h1 {padding: 160px 0 0 80px;}
+	.cover p.date {color: #fff;font-size: 18px;padding: 20px 0 0 95px;}
+	.cover .contentsList {padding: 75px 0 0 100px;color: #fff;}
+	.cover .contentsList li {font-size: 22px;line-height: 48px;margin: 18px 0 0 0;font-weight: bold;}
+	.cover .contentsList .subList  {padding: 0 0 0 30px;}
+	.cover .contentsList .subList  li {font-size: 16px;line-height: 36px;margin: 0;list-style: disc;}
+	.cover .description { margin:30px 0 0 80px;}
+
+	tr {page-break-inside: avoid;}
+	.section {/*page-break-after: always; */ padding:0 40px;}
+	.breakBefore {page-break-before: always;}
+	.breakAfter {page-break-after: always;}
+	.breakInside {page-break-inside: always;}
+	.breakNone {page-break-inside: avoid;}
+	.nonePage {page-break-after: avoid !important;}
+	.chartArea {page-break-inside: avoid;}
+	.customChartArea {page-break-inside: avoid;}
+	.chartStockArea {page-break-inside: avoid;}
+	.chartWrap {page-break-inside: avoid;}
+	.compareChartItem {page-break-inside: avoid;}
+	.alikeLineChart {page-break-inside: avoid;}
+	/*.section .table {page-break-inside: avoid;}*/
+	.paddingBoth { padding-top:60px; padding-bottom:60px;}
+	.paddingTop { padding-top:60px; }
+	.paddingBottom { padding-bottom:60px; }
+	.summaryText {margin: 50px 0 35px 0;}
+	.container { margin:0;background-color: #ffffff;margin:0;padding: 0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;cborder-radius:none}
+	.download { display:none;}
+	/*.section.stock { padding: 40px 0 0 0;  }*/
+
+	/*.mainCover+.section { padding:25px 40px; }*/
+	.courseDescription {page-break-inside: avoid; height:1400px; }
+	.durationDescArea .durationDesc {page-break-inside: avoid; }
+ }
+ 
+
+.btn_ai_Screen{position:absolute;top:7px;right:35px;border:1px solid #b5b5b5;padding:5px 8px 5px 32px;background:#ffffff url(../../../img/portal/icon_screen.png) no-repeat 8px center;font-size:14px;color:#737373;font-family:'NotoKrM';font-weight:normal;}
+.icon_ai_filedown{position:absolute;top:7px;right:0;width:25px;height:28px;background:url(../../../img/portal/icon_down.png) no-repeat 0 0;display:inline-block;text-indent:-9999px;margin:0 2px;background-size:100% 100%;}
+
+

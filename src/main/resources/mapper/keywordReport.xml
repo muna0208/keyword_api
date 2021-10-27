@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vaiv.ipa.keyword_api.restFullApi.mapper.KeywordReportMapper">
+
+
+   <select id="getReportData" parameterType="issueKeyword" resultType="keywordReport">
+		SELECT *
+      FROM keyword_report
+      WHERE USE_YN='Y' 
+         AND GTR_YMD = #{gtrYmd}
+         AND USER_ID = #{userId}
+         AND ISS_KWD = #{issKwd}
+   </select>
+
+
+</mapper>

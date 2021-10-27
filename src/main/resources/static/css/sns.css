@@ -1,0 +1,63 @@
+#container {margin-top:0px;}
+.contentInner {margin: 0 auto; }
+
+.wrap{position: relative;height: 713px;}
+
+.slidePage-container {width: 100%;height: 100%;overflow: hidden;position: relative;border-radius: 15px;}
+.slidePage-container .item {position: absolute;top: 0;left: 0;width: 100%;height: 100%;overflow-y: hidden;overflow-x: hidden;-webkit-overflow-scrolling: touch;transition: all 700ms cubic-bezier(0.550, 0.085, 0.000, 0.990);background-position: center;-webkit-transition: all 700ms cubic-bezier(0.550, 0.085, 0.000, 0.990);-webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-text-size-adjust: none;-webkit-backface-visibility:hidden;-webkit-transform-style:preserve-3d;}
+.slidePage-container .item:not(:first-child ) {transform: translate3d(0,100%,0);-webkit-transform: translate3d(0,100%,0);}
+
+.slidePage-container .item.item1 {height:auto;}
+.slidePageItem.doubleSection section {min-height:44%;}
+.slidePageItem.doubleSection section:not(:first-child ) {margin-top: 28px;}
+
+/* page layout Full page */
+.wrap.clear{height: auto;}
+.wrap.clear 	.slidePage-container .item{
+	position: relative !important;
+	transform: none !important;
+}
+
+
+
+#paginationDiv {/* width: 30px; */position: absolute;top: 0%;right:10px;-webkit- box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-left: 606px;z-index: 8;
+-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+}
+/* #pagination:before{content:'';position: absolute;left: 8px;top: 28px;bottom: 26px;width: 1px;background-color:#DDD;z-index: -1;} */
+
+#pagination .down,
+#pagination .up{background-color: #f0f3f5;font-size: 13px;color: #003d5f;border: 1px solid #b7c8d3;border-radius: 50px;width: 120px;box-sizing: border-box;display: block;padding: 7px 0;cursor:pointer;opacity:0.8;margin-left:-10px;}
+#pagination .up{margin-top:-9px;}
+#pagination .down{margin-bottom:-5px;}
+#pagination .down *{bottom:0px;}
+#pagination div.down div,#pagination div.up div{display: inline-block;position: relative;}
+#pagination div.down div{left: 5px;bottom: -1px;}
+#pagination div.up div{left: 10px;top:1px;}
+#paginationBefore{content:'';position: absolute;right: 8px;top: 10px;bottom: 12px;width: 1px;background-color:#DDD;z-index: -1;margin:40px 0;display:none;}
+
+
+
+
+#pagination a {display: block;line-height: 28px;cursor:pointer;position: relative;font-size: 15px;padding-right: 31px;width: 225px;color: #666;text-align: right;margin: 13px 0px;}
+/* #pagination a:after {content: "";width: 14px;height: 14px;border-radius: 50%;display: inline-block;-webkit-transition: background .3s ease;-moz-transition: background .3s ease;-ms-transition: background .3s ease;-o-transition: background .mornitoringWrap .3s ease;transition: background .3s ease;margin-top: 0px;position: absolute;left: 2px;top: 7px;z-index: -1;background-color: #DDD;} */
+#pagination a span.after {width: 4px;height: 4px;border-radius: 50%;display: inline-block;-webkit-transition: background .3s ease;-moz-transition: background .3s ease;-ms-transition: background .3s ease;-o-transition: background .mornitoringWrap .3s ease;transition: background .3s ease;margin-top: 0px;position: absolute;right: 5px;top: 14px;z-index: -1;background-color: #141F35;}
+#pagination a span.after span.number{display:none;}
+#pagination a span.title{color:#A3A3A3;font-family: Noto Sans KR;font-style: normal;font-weight: normal;font-size: 15px;line-height: 22px;text-align: right;letter-spacing: -0.05em;}
+#pagination a.active{color: #2B2349;font-weight: bold;}
+#pagination a.active span.title{color: #111111;background-color: transparent;    border-color: transparent;}    
+#pagination a.active:after {background: #ff6866;text-align: center;font-size: 13px;font-family: 'Century Gothic';padding: 5px;right: -4px;top: 3px;vertical-align: middle;line-height: 15px;color: #fff;}
+/* #pagination a.active span.after {background: #0a4595;text-align: center;font-size: 13px;width: 4px;height: 4px;font-family: 'Century Gothic';padding: 5px;right: 0px;top: 3px;vertical-align: middle;line-height: 15px;color: #fff;} */
+#pagination a.active span.after {content:'';position: absolute;width: 14px;height: 14px;right: 0px;top: 7px;border: 1px solid #141F35;box-sizing: border-box;background: transparent;}
+#pagination a.active span.after::after{content:'';width: 4px;height: 4px;border-radius: 50%;display: inline-block;-webkit-transition: background .3s ease;-moz-transition: background .3s ease;-ms-transition: background .3s ease;-o-transition: background .mornitoringWrap .3s ease;transition: background .3s ease;margin-top: 0px;position: absolute;right: 4px;top: 4px;z-index: -1;background-color: #141F35;}
+#pagination a.active span.after span.number{display:none;}
+
+#pagination .down .iconArrow,
+#pagination .up .iconArrow{margin:0px 6px 0px 8px;display: inline-block;width: 20px;height: 20px;background-color: #5080a1;border-radius: 10px;vertical-align: middle;text-align:center}
+
+#pagination .down .iconArrow:before,
+#pagination .up .iconArrow:before{display:inline-block;content:'';width: 10px;height: 10px;vertical-align:middle;background: url(../images/icon_sprite.png) 0px -329px no-repeat;}
+#pagination .up .iconArrow:before{background-position-x:-38px;}
+
+#pagination .down:hover, 
+#pagination .up:hover {opacity:1;}
+#pagination.pagination a.active {background: transparent !important}

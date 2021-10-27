@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vaiv.ipa.keyword_api.scheduler.SchedulerMapper">
+
+    <select id="getCongressmanInfo" resultType="congressmanInfo">
+        SELECT * FROM congressman_info ORDER BY USER_ID
+    </select>
+
+
+    <select id="getCountIssKwdOfDate" resultType="int">
+		SELECT count(*) FROM issuekeyword 
+        WHERE GTR_YMD = #{date}
+    </select>
+    <delete id="deleteIssueKeyword">
+        DELETE FROM issuekeyword
+        WHERE GTR_YMD = #{date}
+    </delete>
+   <insert id="insertIssueKeyword" parameterType="java.util.List">
+        INSERT INTO issuekeyword (
+                GTR_YMD, USER_ID, USER_NM, ISS_KWD, RNK, 
+                FREQ, USE_YN, ISS_KWD_DISP, DOC_ID, EXTR_TYPE, 
+                RNK_VAR, REG_DT, ISS_KWD_ID, SUB_KWD, INC_KWD
+            ) 
+        VALUES 
+        <foreach collection="issKwdList" item="item" separator=",">
+            (
+                #{item.gtrYmd}, #{item.userId}, #{item.userNm}, #{item.issKwd}, #{item.rnk},
+                #{item.freq}, #{item.useYn}, #{item.issKwdDisp}, #{item.docId}, #{item.extrType},
+                #{item.rnkVar}, #{item.regDt}, #{item.issKwdId}, #{item.subKwd}, #{item.incKwd}
+            )
+        </foreach>
+   </insert>
+
+
+    <select id="getCountClstDataOfDate" resultType="int">
+        SELECT count(*) FROM clst_data
+        WHERE GTR_YMD = #{date}
+    </select>
+    <delete id="deleteClstData">
+        DELETE FROM clst_data
+        WHERE GTR_YMD = #{date}
+    </delete>
+    <insert id="insertClstData" parameterType="java.util.List">
+        INSERT INTO clst_data (
+            GTR_YMD, USER_ID, CLST_IDX, CLST_NAME, CLST_SIZE, CLST_SIMILARITY
+            ) 
+        VALUES 
+        <foreach collection="clstDataList" item="item" separator=",">
+            (
+                #{item.gtrYmd}, #{item.userId}, #{item.clstIdx}, #{item.clstName}, #{item.clstSize},#{item.clstSimilarity}
+            )
+        </foreach>
+    </insert>
+
+
+    <select id="getCountClstDocsOfDate" resultType="int">
+        SELECT count(*) FROM clst_docs
+        WHERE GTR_YMD = #{date}
+    </select>
+    <delete id="deleteClstDocs">
+        DELETE  FROM clst_docs
+        WHERE GTR_YMD = #{date}
+    </delete>
+    <insert id="insertClstDocs" parameterType="java.util.List">
+        INSERT INTO clst_docs (
+                GTR_YMD, USER_ID, CLST_IDX, DOC_ID, DOC_IDX, 
+                DOC_DATE, TITLE, CONTENT, URL, DOC_SIMILARITY, 
+                WRITER_NAME
+            )
+        VALUES 
+        <foreach collection="clstDocsList" item="item" separator=",">
+            (
+                #{item.gtrYmd}, #{item.userId}, #{item.clstIdx}, #{item.docId}, #{item.docIdx},
+                #{item.docDate}, #{item.title}, #{item.content}, #{item.url}, #{item.docSimilarity},
+                #{item.writerName}
+            )
+        </foreach>
+    </insert>
+
+    <select id="getCountClstMstrOfDate" resultType="int">
+        SELECT count(*) FROM clst_mstr
+        WHERE GTR_YMD = #{date}
+    </select>
+    <delete id="deleteClstMstr">
+        DELETE  FROM clst_mstr
+        WHERE GTR_YMD = #{date}
+    </delete>
+    <insert id="insertClstMstr" parameterType="java.util.List">
+        INSERT INTO clst_mstr (
+            GTR_YMD, USER_ID, USER_NM, CMT_CD, CMT_NM, 
+            TOTAL_DOCS, SAMPLE_DOCS, REG_DT
+            )
+        VALUES 
+        <foreach collection="clstMstrList" item="item" separator=",">
+            (
+                #{item.gtrYmd}, #{item.userId}, #{item.userNm}, #{item.cmtCd}, #{item.cmtNm},
+                #{item.totalDocs}, #{item.sampleDocs}, #{item.regDt}
+            )
+        </foreach>
+    </insert>
+
+
+
+    <select id="getCountKeywordReportDataOfUserId" parameterType="keywordReportData" resultType="int">
+        SELECT count(*) FROM keyword_report
+        WHERE GTR_YMD = #{gtrYmd}
+            AND USER_ID = #{userId}
+            <if test='issKwd != null and issKwd != "" '>
+                AND ISS_KWD = #{issKwd}
+            </if>
+    </select>
+
+    <delete id="deleteKeywordReportUserId" parameterType="keywordReportData">
+        DELETE FROM keyword_report
+        WHERE GTR_YMD = #{gtrYmd}
+            AND USER_ID = #{userId}
+    </delete>
+
+    <select id="getIssueKwdOfUserId" parameterType="issueKeyword" resultType="issueKeyword">
+        SELECT * FROM issuekeyword
+        WHERE USE_YN='Y' 
+            AND GTR_YMD = #{gtrYmd} 
+            AND USER_ID = #{userId}
+            AND ISS_KWD != ''
+            <choose>
+                <when test='extrType == "I"'>
+                    AND EXTR_TYPE != 'T'
+                    AND EXTR_TYPE != 'D'
+                </when>
+                <when test='extrType != null and extrType != "" '>
+                   AND EXTR_TYPE = #{extrType}
+                </when>
+            </choose>
+        ORDER BY FREQ DESC
+        <if test='topN != null and topN != ""' >LIMIT #{topN}</if>
+   </select>
+
+   <insert id="insertKeywordReportData" parameterType="keywordReportData">
+        INSERT INTO keyword_report (
+                GTR_YMD, USER_ID, ISS_KWD, USER_NM, PROCESSING_TIME,
+                TSB1_DATA, ASB1_DATA, STB3_DATA,
+                TSL1_DATA, TSL2_DATA, DOB1_DATA
+            )
+        VALUES 
+            (
+                #{gtrYmd}, #{userId}, #{issKwd}, #{userNm}, #{processingTime},
+                #{tsb1Data}, #{asb1Data}, #{stb3Data}, 
+                #{tsl1Data}, #{tsl2Data}, #{dob1Data}
+            )
+    </insert>
+
+    <update id="updateKeywordReportData" parameterType="keywordReportData">
+        UPDATE keyword_report 
+        SET
+            MDF_DT = NOW()
+            <if test='tsb1Data != null and tsb1Data != ""' >,TSB1_DATA=#{tsb1Data}</if>
+            <if test='asb1Data != null and asb1Data != ""' >,ASB1_DATA=#{asb1Data}</if>
+            <if test='stb3Data != null and stb3Data != ""' >,STB3_DATA=#{stb3Data}</if>
+            <if test='tsl1Data != null and tsl1Data != ""' >,TSL1_DATA=#{tsl1Data}</if>
+            <if test='tsl2Data != null and tsl2Data != ""' >,TSL2_DATA=#{tsl2Data}</if>
+            <if test='dob1Data != null and dob1Data != ""' >,DOB1_DATA=#{dob1Data}</if>
+            <if test='processingTime != null and processingTime != ""' >
+                ,PROCESSING_TIME = PROCESSING_TIME + #{processingTime} 
+                    WHERE GTR_YMD=#{gtrYmd} AND USER_ID=#{userId} AND ISS_KWD=#{issKwd};
+            </if>
+    </update>
+
+    <delete id="deleteKeywordReport">
+        DELETE FROM keyword_report
+        WHERE <![CDATA[ GTR_YMD <= #{gtrYmd} ]]>        
+    </delete>
+    
+</mapper>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>Report</title>
+
+    
+  </head>
+  
+<body>
+	<!-- container -->
+	<div class="container">
+		<!-- 전체 로딩바 -->
+		<div id="loadingBar">
+			<div class="loading"><img alt="" src="/images/ajax_loading_image.gif"></div>
+			<div class="loadingBox"></div>
+		</div>
+		
+        <!--
+		<input type="hidden" id="userId" th:value="${reportParams.userId}">
+		<input type="hidden" id="gtrYmd" th:value="${reportParams.gtrYmd}">
+		<input type="hidden" id="issKwdDisp" th:value="${reportParams.issKwdDisp}">
+		<input type="hidden" id="subKwd" th:value="${reportParams.subKwd}">
+		<input type="hidden" id="incKwd" th:value="${reportParams.incKwd}">
+        -->
+        <input type="hidden" id="userId" value="">
+		<input type="hidden" id="gtrYmd" th:value="2021-05-24">
+		<input type="hidden" id="issKwdDisp" value="방미 성과">
+		<input type="hidden" id="subKwd" th:value="성과">
+		<input type="hidden" id="incKwd" th:value="방미">
+
+		<div class="cover" style="background: url('/images/default_cover_img.png')">
+			<h1><span class="issue" id="title">AI Report 20210422</span></h1>
+		</div>
+		
+		<div id="top10"></div>
+		<div id="tsb1"></div><!-- 언급량 추이 -->
+		<div id="asb1"></div><!-- 연관어 클라우드 -->
+		<div id="stb3"></div><!-- 감성분포 및 감성분포 추이 -->
+		<div id="tsl1"></div><!-- 장기 트렌드 분석 -->
+		<div id="tsl2"></div><!-- 변곡점 분석 -->
+		
+		<!-- content -->
+		<div class="content menu_content"></div>
+		<!-- //content -->
+
+	</div>
+	<!-- //container -->
+
+</body>
+    <!-- Bootstrap -->
+    
+</html>

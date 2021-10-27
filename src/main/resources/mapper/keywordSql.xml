@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vaiv.ipa.keyword_api.restFullApi.mapper.KeywordMapper">
+
+
+   <select id="getIssueKeyword" resultType="issueKeyword">
+		SELECT *
+      FROM issuekeyword
+      WHERE USE_YN='Y' 
+         AND GTR_YMD = #{gtrYmd}
+         AND USER_ID = #{userId}
+         AND ISS_KWD != ''
+         <choose>
+            <when test='extrType == "I"'>
+                AND EXTR_TYPE != 'T'
+                AND EXTR_TYPE != 'D'
+            </when>
+            <when test='extrType != null and extrType != "" '>
+               AND EXTR_TYPE = #{extrType}
+            </when>
+        </choose>
+      ORDER BY FREQ DESC
+      LIMIT 10
+   </select>
+
+   <select id="issueKeywordRepresentCount" resultType="int">
+		SELECT count(*)
+      FROM issuekeyword
+      WHERE USE_YN='Y' 
+         AND GTR_YMD = #{gtrYmd}
+         AND USER_ID = #{userId}
+         AND ISS_KWD != ''
+         AND EXTR_TYPE = 'T'
+   </select>
+
+   <select id="issueKeywordJointCount" resultType="int">
+		SELECT count(*)
+      FROM issuekeyword
+      WHERE USE_YN='Y' 
+         AND GTR_YMD = #{gtrYmd}
+         AND USER_ID = #{userId}
+         AND ISS_KWD != ''
+         AND EXTR_TYPE = 'D'
+   </select>
+
+   <select id="issueKeywordCount" resultType="int">
+		SELECT count(*)
+      FROM issuekeyword
+      WHERE USE_YN='Y' 
+         AND GTR_YMD = #{gtrYmd}
+         AND USER_ID = #{userId}
+         AND ISS_KWD != ''
+         AND EXTR_TYPE != 'T'
+         AND EXTR_TYPE != 'D'
+   </select>
+
+
+   
+   <select id="getTopNews" resultType="clstDocs">
+      SELECT cd.*, left(cd.CONTENT, 140) as summary
+      FROM issuekeyword i
+         , clst_docs cd
+      WHERE 1=1
+         AND i.GTR_YMD = #{gtrYmd}
+         AND i.USER_ID = #{userId}
+         AND i.USE_YN = 'Y'
+         AND i.ISS_KWD != ''
+         AND i.GTR_YMD = cd.GTR_YMD
+         AND i.USER_ID = cd.USER_ID
+         AND i.DOC_ID = cd.DOC_ID
+         ORDER BY i.FREQ desc
+      LIMIT 10;
+   </select>
+
+   <!-- 이슈키워드 10개 -->
+   <select id="getNewsAnalyticsISK10" resultType="NewsAnalyticsISK10">
+   select row_number() over( order by a.FREQ desc) as RNUM
+        , a.ISS_KWD
+        , a.FREQ
+        , a.RNK
+        , a.RNK_VAR
+        , a.ISS_KWD_DISP
+        , SUM(a.FREQ) OVER() as SUM_FREQ 
+        , ROUND(a.FREQ / SUM(a.FREQ) OVER() * 100 ) as RND_FREQ
+     from (
+            select i.ISS_KWD 
+                 , i.FREQ 
+                 , i.RNK 
+                 , i.RNK_VAR 
+                 , i.ISS_KWD_DISP 
+              from issuekeyword i 
+             where i.GTR_YMD = #{gtrYmd}
+               and i.USE_YN = 'Y'
+               and i.USER_ID = #{userId}
+               and i.ISS_KWD != ''
+             order by i.FREQ desc
+             limit 10
+           ) a
+   </select>
+
+   <!-- 키워드 뉴스 -->
+   <select id="getNewsAnalyticsIssueKeywords" resultType="NewsAnalyticsIssueKeywords">
+      select cd.DOC_ID 
+           , CONCAT( LEFT(cd.DOC_DATE, 4), '.', SUBSTRING(cd.DOC_DATE, 5, 2), '.', RIGHT(cd.DOC_DATE, 2) ) as DOC_DATE
+           , cd.TITLE
+           , cd.URL
+           , cd.CONTENT
+           , cd.DOC_SIMILARITY 
+           , cd.WRITER_NAME 
+        from clst_docs cd 
+       where cd.GTR_YMD = #{gtrYmd}
+         and cd.USER_ID = #{userId}
+         and cd.CLST_IDX = (
+                              select ci.CLST_IDX 
+                                from issuekeyword i 
+                                   , clst_docs ci 
+                               where i.GTR_YMD = #{gtrYmd}
+                                 and i.USER_ID = #{userId}
+                                 and i.ISS_KWD = #{issKwd}
+                                 and i.GTR_YMD = ci.GTR_YMD 
+                                 and i.USER_ID = ci.USER_ID   
+                                 and i.DOC_ID = ci.DOC_ID
+                           )      
+       order by doc_idx asc 
+       limit 10
+   </select>
+
+   <!--TOP10 뉴스 -->
+   <select id="getNewsAnalyticsNews" resultType="NewsAnalyticsNews">
+      select i.ISS_KWD
+            , i.RNK
+            , i.RNK_VAR
+            , i.FREQ
+            , i.ISS_KWD_DISP
+            , i.DOC_ID
+            , cd.TITLE
+            , cd.URL
+            , cd.CONTENT
+            , cd.WRITER_NAME
+            , cd.DOC_SIMILARITY
+            , CONCAT( LEFT(cd.DOC_DATE, 4), '.', SUBSTRING(cd.DOC_DATE, 5, 2), '.', RIGHT(cd.DOC_DATE, 2) ) as DOC_DATE
+         from issuekeyword i 
+            , clst_docs cd 
+      where i.GTR_YMD = #{gtrYmd}
+         and i.USE_YN = 'Y'
+         and i.ISS_KWD != '' 
+         and i.USER_ID = #{userId}
+         and i.GTR_YMD = cd.GTR_YMD 
+         and i.USER_ID = cd.USER_ID 
+         and i.DOC_ID = cd.DOC_ID 
+      order by freq desc
+      limit 10
+   </select>
+
+   <!-- 이슈키워드관리 -->
+   <select id="getNewsAnalyticsISKManagement" resultType="NewsAnalyticsISKManagement">
+      select row_number() over( order by a.FREQ desc) as RNUM
+         , a.ISS_KWD
+         , a.FREQ
+         , a.RNK
+         , a.RNK_VAR
+         , a.ISS_KWD_DISP
+         , SUM(a.FREQ) OVER() as SUM_FREQ 
+         , ROUND(a.FREQ / SUM(a.FREQ) OVER() * 100 ) as RND_FREQ
+         , a.USER_NM
+         , a.USE_YN
+         , CONCAT( LEFT(a.GTR_YMD, 4), '.', SUBSTRING(a.GTR_YMD, 5, 2), '.', RIGHT(a.GTR_YMD, 2) ) as GTR_YMD
+         , a.DOC_ID
+         , a.ISS_KWD_ID
+      from (
+            select i.ISS_KWD 
+                 , i.FREQ 
+                 , i.RNK 
+                 , i.RNK_VAR 
+                 , i.ISS_KWD_DISP
+                 , i.USER_NM
+                 , i.USE_YN
+                 , i.GTR_YMD
+                 , i.DOC_ID
+                 , i.ISS_KWD_ID
+              from issuekeyword i 
+             where i.GTR_YMD = #{gtrYmd}
+               and i.USER_ID = #{userId}
+               and i.ISS_KWD != ''
+               <choose>
+                  <when test='extrType == "I"'>
+                      AND i.EXTR_TYPE != 'T'
+                      AND i.EXTR_TYPE != 'D'
+                  </when>
+                  <when test='extrType != null and extrType != "" '>
+                     AND i.EXTR_TYPE = #{extrType}
+                  </when>
+              </choose>
+             order by i.FREQ desc
+           ) a
+   </select>
+
+   <!-- 이슈키워드 관리 - 수정-->
+   <update id="getNewsAnalyticsISKUpdate" parameterType="newsAnalyticsISKManagement">
+      update issuekeyword
+         set USE_YN = #{useYn}
+         <if test='issKwdDisp != null and issKwdDisp != "" '>
+            ,ISS_KWD_DISP = #{issKwdDisp}
+        </if>
+       where ISS_KWD_ID = #{issKwdId}
+         and USER_ID = #{userId}
+   </update>
+
+
+   <!-- 이슈키워드 최근 date-->
+   <select id="getIssKwdLatestDate" resultType="String">
+		SELECT GTR_YMD
+      FROM issuekeyword
+      WHERE USE_YN='Y'
+         AND USER_ID = #{userId}
+         AND ISS_KWD != ''
+      ORDER BY GTR_YMD DESC
+      LIMIT 1
+   </select>
+</mapper>
